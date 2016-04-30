@@ -1,0 +1,6 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$CONFIGURATION_BUILD_DIR/Bolts" "$CONFIGURATION_BUILD_DIR/Facebook-iOS-SDK" "$CONFIGURATION_BUILD_DIR/Parse" "$CONFIGURATION_BUILD_DIR/ParseFacebookUtils" "$CONFIGURATION_BUILD_DIR/ParseUI"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Bolts/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Facebook-iOS-SDK/FacebookSDK.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ParseFacebookUtils/ParseFacebookUtils.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ParseUI/ParseUI.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Bolts" -framework "FacebookSDK" -framework "Parse" -framework "ParseFacebookUtils" -framework "ParseUI"
+PODS_ROOT = ${SRCROOT}/Pods

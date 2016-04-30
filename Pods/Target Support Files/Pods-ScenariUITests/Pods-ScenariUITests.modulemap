@@ -1,0 +1,6 @@
+framework module Pods_ScenariUITests {
+  umbrella header "Pods-ScenariUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
