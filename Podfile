@@ -9,6 +9,10 @@ target 'Scenari' do
 pod 'Parse'
 pod 'ParseUI'
 pod 'ParseFacebookUtils'
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'ChameleonFramework/Swift'
+pod 'MBProgressHUD'
 
 end
 

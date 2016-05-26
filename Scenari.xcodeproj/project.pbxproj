@@ -59,6 +59,7 @@
 		6A24C0280D6EEBF0A5A8FBE9 /* Pods-ScenariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scenari-Bridging-Header.h"; sourceTree = "<group>"; };
 		D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScenarioViewController.swift; sourceTree = "<group>"; };
 		D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioPostDetailViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 		D1CECAF41CD3E37E0006809A = {
 			isa = PBXGroup;
 			children = (
+				D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */,
 				D1CECAFF1CD3E37E0006809A /* Scenari */,
 				D1CECB171CD3E37E0006809A /* ScenariTests */,
 				D1CECB221CD3E37E0006809A /* ScenariUITests */,
@@ -260,6 +262,7 @@
 				D1CECAFB1CD3E37E0006809A /* Resources */,
 				E89000149F6A3E18F3EF4A63 /* 📦 Embed Pods Frameworks */,
 				04948877C9385D06397BB213 /* 📦 Copy Pods Resources */,
+				D1F09F5F1CE69709007FB157 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -471,6 +474,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D1F09F5F1CE69709007FB157 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8e03bf8519f7903a4e20ae17146a26bdb3d4774a fba0856ddf32bb0d729da59586194444a0b76228015168b2190abef98e9907b1";
 		};
 		E89000149F6A3E18F3EF4A63 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

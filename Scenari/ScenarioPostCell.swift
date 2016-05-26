@@ -20,63 +20,12 @@ class ScenarioPostCell: PFTableViewCell {
     @IBOutlet weak var answerAcount: UILabel!
     @IBOutlet weak var answerBcount: UILabel!
     
-    var parseObjectString: NSString!
+    //var parseObjectString: NSString!
     
     var parseObject:PFObject!
     
     
     
-    @IBAction func answerAButton(sender: UIButton){
-        
-        if(parseObject != nil) {
-            if var votes:Int? = parseObject!.objectForKey("answer_1_total") as? Int {
-                votes!++
-                
-                parseObject!.setObject(votes!, forKey: "answer_1_total");
-                parseObject!.saveInBackground();
-            }
-        }
-       /*
-        let user = PFUser.currentUser()
-        let answerObj = PFObject(className: "Questions")
-        answerObj.setObject(parseObject, forKey: "objectId")
-        
-        //  answerObj["answerAArray"] = user?.objectId;
-        answerObj.addUniqueObject((user?.objectId)!, forKey: "answerA_array")
-        
-        answerObj.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                // The object has been saved.
-                print("Success")
-            } else {
-                // There was a problem, check error.description
-                print("Failure"+(error?.description)!)
-            }
-        }
-        */
-    }
-    
-    @IBAction func answerBButton(sender: UIButton){
-        let user = PFUser.currentUser()
-        let answerObj = PFObject(className: "Questions")
-        
-        
-        
-        //  answerObj["answerAArray"] = user?.objectId;
-        answerObj.addUniqueObject((user?.objectId)!, forKey: "answerB_array")
-        
-        answerObj.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                // The object has been saved.
-                print("Success")
-            } else {
-                // There was a problem, check error.description
-                print("Failure")
-            }
-        }
-    }
 
 
     

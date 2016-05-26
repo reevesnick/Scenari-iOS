@@ -9,12 +9,15 @@
 import UIKit
 import Parse
 import ParseUI
+import MBProgressHUD
 
 class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var questionScenario:UITextView!
     @IBOutlet weak var answerAField: UITextField!
     @IBOutlet weak var answerBField: UITextField!
+    
+    var HUD:MBProgressHUD?
     
     
 
@@ -30,27 +33,62 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func uploadButton(sender: AnyObject){
+        loadingHUD()
         let questionText = questionScenario.text
         let answerAText = answerAField.text
-        let answerBText = answerAField.text
+        let answerBText = answerBField.text
         
         let posts = PFObject(className: "Questions")
         posts["question"] = questionText
-        posts["answer_a"] = answerAText
-        posts["answer_b"] = answerBText
+        posts["answer_a"] = "A: "+answerAText!
+        posts["answer_b"] = "B: "+answerBText!
         posts["postCreator"] = PFUser.currentUser()
         
         posts.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
+                PFUser.currentUser()?.incrementKey("Posts")
+                self.doneHUD()
                 print("Success")
             } else {
                 // There was a problem, check error.description
+                let alert = UIAlertController(title: "Error", message: "Your scenario cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                self.HUD!.hide(true)
                 print("Failure")
             }
         }
     }
+    
+    //MARK - MBProgressHUD Customization
+    func doneHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
+        HUD!.customView = UIImageView(image: UIImage(named: "Checkmark.png"))
+        
+        // Set custom view mode
+        HUD!.mode = .CustomView;
+        
+        //HUD!.delegate = self;
+        HUD!.labelText = "Scenario Submitted";
+        
+        HUD!.show(true)
+        HUD!.hide(true, afterDelay:3)
+    }
+    
+    func loadingHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        //HUD!.delegate = self
+        HUD!.labelText = "Submitting..."
+        
+    }
+    
     
 
     /*

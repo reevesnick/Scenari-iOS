@@ -45,8 +45,12 @@ class ScenarioPostDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+
     @IBAction func answerAButton(sender: UIButton){
+        
+        
+        
+        /*
         let user = PFUser.currentUser()
         //let answerObj = PFObject(className: "Questions")
       //  answerObj["answerAArray"] = user?.objectId;
@@ -62,10 +66,11 @@ class ScenarioPostDetailViewController: UIViewController {
                 print("Failure")
             }
         }
-    
+    */
     }
     
     @IBAction func answerBButton(sender: UIButton){
+        /*
         let user = PFUser.currentUser()
         let answerObj = PFObject()
         //  answerObj["answerAArray"] = user?.objectId;
@@ -81,8 +86,9 @@ class ScenarioPostDetailViewController: UIViewController {
                 print("Failure")
             }
         }
+ */
     }
-*/
+
     /*
     // MARK: - Navigation
 

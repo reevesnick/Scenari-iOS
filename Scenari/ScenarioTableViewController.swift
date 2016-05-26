@@ -9,10 +9,12 @@
 import UIKit
 import Parse
 import ParseUI
+import MBProgressHUD
 
-class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate {
 
-    
+    var HUD: MBProgressHUD?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +37,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     }
     
     override func queryForTable() -> PFQuery {
-        let query:PFQuery = PFQuery(className:"Questions").includeKey("postCreator")
-       // query.includeKey("postCreator")
+        let query:PFQuery = PFQuery(className:"Questions")
+        query.includeKey("postCreator")
         
         if(objects?.count == 0)
         {
@@ -53,9 +55,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell?
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ScenarioPostCell
-        
 
         
+        //cell.userPostLabel?.text = object?.objectForKey("postCreator")!.objectForKey("username") as? String
         cell.questionLabel?.text = object?.objectForKey("question") as? String
         cell.userPostLabel?.text = object?.objectForKey("username") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
@@ -71,8 +73,36 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         */
         return cell
     }
-   /*
+   
     @IBAction func answerAButton(sender: UIButton){
+        loadingHUD()
+        let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
+        let object = objectAtIndexPath(hitIndex)
+        
+        //This is where the key increment for the object
+        object!.incrementKey("answer_a_total")
+        //object!.saveInBackground()
+        object!.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+                self.doneHUD()
+                print("Success")
+            } else {
+                // There was a problem, check error.description
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                self.HUD!.hide(true)
+                print("Failure")
+            }
+        }
+        
+        
+        self.tableView.reloadData()
+        NSLog("Top Index Path \(hitIndex?.row)")
+        /*
         let user = PFUser.currentUser()
         let answerObj = PFObject(className: "Questions")
         
@@ -88,11 +118,40 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 // There was a problem, check error.description
                 print("Failure")
             }
-        }
+        }*/
         
     }
     
     @IBAction func answerBButton(sender: UIButton){
+        loadingHUD()
+        let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
+        let object = objectAtIndexPath(hitIndex)
+        
+        //this is where I incremented the key for the object
+        object!.incrementKey("answer_b_total")
+        //object!.saveInBackground()
+        object!.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+                self.doneHUD()
+                print("Success")
+            } else {
+                // There was a problem, check error.description
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                self.HUD!.hide(true)
+                print("Failure")
+            }
+        }
+        //doneHUD()
+        
+        
+        self.tableView.reloadData()
+        NSLog("Top Index Path \(hitIndex?.row)")
+        /*
         let user = PFUser.currentUser()
         let answerObj = PFObject(className: "Questions")
         
@@ -110,8 +169,36 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 print("Failure")
             }
         }
+ */
     }
-*/
+    
+    //MARK - MBProgressHUD Customization
+    func doneHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        // The sample image is based on the work by http://www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
+        // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
+        HUD!.customView = UIImageView(image: UIImage(named: "Checkmark.png"))
+        
+        // Set custom view mode
+        HUD!.mode = .CustomView;
+        
+        HUD!.delegate = self;
+        HUD!.labelText = "Answer Submitted";
+        
+        HUD!.show(true)
+        HUD!.hide(true, afterDelay:3)
+    }
+
+    func loadingHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        HUD!.delegate = self
+        HUD!.labelText = "Submitting..."
+        
+    }
     
      // MARK: - Navigation
      

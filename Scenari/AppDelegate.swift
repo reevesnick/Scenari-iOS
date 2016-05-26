@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 import Parse
+import Fabric
+import Crashlytics
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Fabric SDK
+        Fabric.with([Crashlytics.self])
+
         
         //Parse Server API Key
         let configuration = ParseClientConfiguration {
@@ -27,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initializeWithConfiguration(configuration)
+        
+        //Custon UI
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatSkyBlueColor(), withContentStyle: UIContentStyle.Contrast)
         
         
         return true
