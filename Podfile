@@ -13,6 +13,8 @@ pod 'Fabric'
 pod 'Crashlytics'
 pod 'ChameleonFramework/Swift'
 pod 'MBProgressHUD'
+pod 'PopupController'
+
 
 end
 

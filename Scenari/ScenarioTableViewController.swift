@@ -14,6 +14,8 @@ import MBProgressHUD
 class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate {
 
     var HUD: MBProgressHUD?
+    var logInViewController: PFLogInViewController! = PFLogInViewController()
+    var signUpViewController: PFSignUpViewController! = PFSignUpViewController()
 
     
     override func viewDidLoad() {
@@ -29,16 +31,23 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-/*
-        let loginVC = PFLogInViewController()
-        loginVC.fields = PFLogInFields(rawValue: PFLogInFields.UsernameAndPassword.rawValue | PFLogInFields.LogInButton.rawValue)
- 
- */
+        
+        if (PFUser.currentUser() == nil) {
+            let loginViewController = PFLogInViewController()
+            loginViewController.delegate = self
+            self.presentViewController(loginViewController, animated: false, completion: nil)
+        }
+
     }
+    
+    //MARK - Parse Login
+    
     
     override func queryForTable() -> PFQuery {
         let query:PFQuery = PFQuery(className:"Questions")
         query.includeKey("postCreator")
+        
+        
         
         if(objects?.count == 0)
         {
@@ -55,13 +64,48 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell?
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ScenarioPostCell
+        
+        
+        let answerATotal: Int! = object?.objectForKey("answer_a_total") as? Int
+            cell.answerAcount?.text = "A: \(answerATotal) votes"
+        
+        
+        let answerBTotal: Int! = object?.objectForKey("answer_b_total") as? Int
+            cell.answerBcount?.text = "B: \(answerBTotal) votes"
 
         
-        //cell.userPostLabel?.text = object?.objectForKey("postCreator")!.objectForKey("username") as? String
+        
+    
+        // Show the username
+        
+        if let postUser = object!["postCreator"] as? PFUser{
+            let name = postUser["username"] as! String
+            let profileOicture = postUser["profile_pic"] as! PFFile
+            
+            cell.userPostLabel?.text = "@" + name
+        }
+        /*
+        if let pUserName = object?.objectForKey("PostCreator")?.includeKey("username") as? String {
+            cell.userPostLabel?.text = "@" + pUserName
+        }
+        */
+
+
+        
+        //let credit:String? = object!["postCreator"] as? String
+        
+
+        
+       
         cell.questionLabel?.text = object?.objectForKey("question") as? String
         cell.userPostLabel?.text = object?.objectForKey("username") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
+        
+        
+        
+      //  cell.answerAcount?.text = "A: \(answerATotal) votes"
+       // cell.answerBcount?.text = "B: \(answerBTotal) votes"
     
        // cell.candidatePartyLabel?.text = object?.objectForKey("candidate_party") as? String
         
@@ -73,12 +117,17 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         */
         return cell
     }
+    
+
    
     @IBAction func answerAButton(sender: UIButton){
         loadingHUD()
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
         let object = objectAtIndexPath(hitIndex)
+        
+        PFUser.currentUser()!.incrementKey("totalVotes")
+
         
         //This is where the key increment for the object
         object!.incrementKey("answer_a_total")
@@ -87,6 +136,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
+
                 self.doneHUD()
                 print("Success")
             } else {
@@ -134,6 +184,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
+                PFUser.currentUser()!.incrementKey("totalVotes")
+
                 // The object has been saved.
                 self.doneHUD()
                 print("Success")

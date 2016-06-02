@@ -32,6 +32,10 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelButton(sender: AnyObject){
+        
+    }
+    
     @IBAction func uploadButton(sender: AnyObject){
         loadingHUD()
         let questionText = questionScenario.text
@@ -43,12 +47,14 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
         posts["answer_a"] = "A: "+answerAText!
         posts["answer_b"] = "B: "+answerBText!
         posts["postCreator"] = PFUser.currentUser()
+        PFUser.currentUser()?.incrementKey("posts")
+
         
         posts.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
-                PFUser.currentUser()?.incrementKey("Posts")
+                PFUser.currentUser()?.incrementKey("posts")
                 self.doneHUD()
                 print("Success")
             } else {

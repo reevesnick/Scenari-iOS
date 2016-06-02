@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57F7F4BBF1EBA5F1EF94B040 /* Pods_Scenari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */; };
 		93E48082498D752CEC7165ED /* Pods_ScenariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */; };
+		D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0ED41CFE60C600F42943 /* ProfileCell.swift */; };
 		D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */; };
 		D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */; };
 		D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */; };
@@ -59,6 +60,7 @@
 		6A24C0280D6EEBF0A5A8FBE9 /* Pods-ScenariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D11B0ED41CFE60C600F42943 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scenari-Bridging-Header.h"; sourceTree = "<group>"; };
 		D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScenarioViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D195BA241CD3EAC200902FC6 /* ProfileViewController.swift */,
+				D11B0ED41CFE60C600F42943 /* ProfileCell.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -262,7 +265,7 @@
 				D1CECAFB1CD3E37E0006809A /* Resources */,
 				E89000149F6A3E18F3EF4A63 /* 📦 Embed Pods Frameworks */,
 				04948877C9385D06397BB213 /* 📦 Copy Pods Resources */,
-				D1F09F5F1CE69709007FB157 /* ShellScript */,
+				D19A31281CFA54190038CEFF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -326,6 +329,7 @@
 				TargetAttributes = {
 					D1CECAFC1CD3E37E0006809A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = L6WD86F9N5;
 					};
 					D1CECB131CD3E37E0006809A = {
 						CreatedOnToolsVersion = 7.3;
@@ -475,7 +479,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1F09F5F1CE69709007FB157 /* ShellScript */ = {
+		D19A31281CFA54190038CEFF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8e03bf8519f7903a4e20ae17146a26bdb3d4774a fba0856ddf32bb0d729da59586194444a0b76228015168b2190abef98e9907b1";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8e03bf8519f7903a4e20ae17146a26bdb3d4774a fba0856ddf32bb0d729da59586194444a0b76228015168b2190abef98e9907b1\n";
 		};
 		E89000149F6A3E18F3EF4A63 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -531,6 +535,7 @@
 				D195BA271CD3EB0C00902FC6 /* ScenarioPostCell.swift in Sources */,
 				D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */,
 				D195BA251CD3EAC200902FC6 /* ProfileViewController.swift in Sources */,
+				D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */,
 				D1CECB091CD3E37E0006809A /* Scenari.xcdatamodeld in Sources */,
 				D1CECB011CD3E37E0006809A /* AppDelegate.swift in Sources */,
 			);
@@ -675,10 +680,13 @@
 			baseConfigurationReference = 28EE3581EEBFFC74B5E814B3 /* Pods-Scenari.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Scenari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -687,10 +695,13 @@
 			baseConfigurationReference = 27FF5193532CAEBA8CDCCCBB /* Pods-Scenari.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Scenari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

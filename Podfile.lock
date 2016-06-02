@@ -23,6 +23,7 @@ PODS:
   - ParseUI (1.2.0):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
+  - PopupController (0.1.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - Parse
   - ParseFacebookUtils
   - ParseUI
+  - PopupController
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
@@ -43,7 +45,8 @@ SPEC CHECKSUMS:
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   ParseFacebookUtils: 7030f53c989fda36ad50029d90edec1327424317
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  PopupController: fb329de274ab0cf9bf1f2758074287600082de1d
 
-PODFILE CHECKSUM: 3dd401b0650e04fb9c4b24e6de300a86f6a1398a
+PODFILE CHECKSUM: b173e9802e458d154389cf8cf3b88710022c8bed
 
 COCOAPODS: 1.0.0.beta.6
