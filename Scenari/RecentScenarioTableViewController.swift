@@ -12,7 +12,9 @@ import ParseUI
 import MBProgressHUD
 
 
-class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate {
+// Method supposed to be Featured or Popular. Mistake it for Recent by Accident. Will change later
+
+class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate {
 
     var HUD: MBProgressHUD?
     var logInViewController: PFLogInViewController! = PFLogInViewController()
@@ -55,7 +57,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             query.cachePolicy = PFCachePolicy.CacheThenNetwork
         }
         
-        query.orderByAscending("createdAt")
+        //Order By Number of Votes
+        query.orderByDescending("answer_a_total")
+        
         return query
     }
     
@@ -63,7 +67,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell?
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ScenarioPostCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! RecentScenarioPostCell
         
         
         let answerATotal: Int! = object?.objectForKey("answer_a_total") as? Int
@@ -262,9 +266,6 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-        
-
-        
         
         if segue.identifier == "showDetail"
         {

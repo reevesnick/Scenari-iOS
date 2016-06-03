@@ -10,7 +10,9 @@ import UIKit
 import Parse
 import ParseUI
 
-class ScenarioPostCell: PFTableViewCell {
+
+
+class RecentScenarioPostCell: PFTableViewCell {
     
     @IBOutlet weak var profilePic:PFImageView!
     @IBOutlet weak var userPostLabel: UILabel!

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Brown Box Works. All rights reserved.
 //
 
-#ifndef Scenari_Bridging_Header_h
-#define Scenari_Bridging_Header_h
+
+#import "SDCSegmentedViewController.h"
+#import "SDCEmbeddedSegmentSegue.h"
 
 
-#endif /* Scenari_Bridging_Header_h */

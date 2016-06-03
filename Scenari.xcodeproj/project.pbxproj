@@ -10,6 +10,12 @@
 		57F7F4BBF1EBA5F1EF94B040 /* Pods_Scenari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */; };
 		93E48082498D752CEC7165ED /* Pods_ScenariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */; };
 		D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0ED41CFE60C600F42943 /* ProfileCell.swift */; };
+		D11B0EDD1D00F64400F42943 /* SDCEmbeddedSegmentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EDA1D00F64400F42943 /* SDCEmbeddedSegmentSegue.m */; };
+		D11B0EDE1D00F64400F42943 /* SDCSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EDC1D00F64400F42943 /* SDCSegmentedViewController.m */; };
+		D11B0EE31D00F86200F42943 /* RecentScenarioPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE01D00F86200F42943 /* RecentScenarioPostCell.swift */; };
+		D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */; };
+		D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */; };
+		D11B0EEA1D00FC9A00F42943 /* SDCSegmentHome.m in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE91D00FC9A00F42943 /* SDCSegmentHome.m */; };
 		D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */; };
 		D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */; };
 		D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */; };
@@ -61,6 +67,15 @@
 		9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D11B0ED41CFE60C600F42943 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		D11B0ED91D00F64400F42943 /* SDCEmbeddedSegmentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCEmbeddedSegmentSegue.h; sourceTree = "<group>"; };
+		D11B0EDA1D00F64400F42943 /* SDCEmbeddedSegmentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCEmbeddedSegmentSegue.m; sourceTree = "<group>"; };
+		D11B0EDB1D00F64400F42943 /* SDCSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCSegmentedViewController.h; sourceTree = "<group>"; };
+		D11B0EDC1D00F64400F42943 /* SDCSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCSegmentedViewController.m; sourceTree = "<group>"; };
+		D11B0EE01D00F86200F42943 /* RecentScenarioPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentScenarioPostCell.swift; sourceTree = "<group>"; };
+		D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentScenarioPostDetailViewController.swift; sourceTree = "<group>"; };
+		D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentScenarioTableViewController.swift; sourceTree = "<group>"; };
+		D11B0EE81D00FC9A00F42943 /* SDCSegmentHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCSegmentHome.h; sourceTree = "<group>"; };
+		D11B0EE91D00FC9A00F42943 /* SDCSegmentHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCSegmentHome.m; sourceTree = "<group>"; };
 		D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scenari-Bridging-Header.h"; sourceTree = "<group>"; };
 		D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScenarioViewController.swift; sourceTree = "<group>"; };
@@ -167,9 +182,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D11B0ED61D00F61500F42943 /* Third Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D11B0ED71D00F64400F42943 /* SDCSegmentedViewController */,
+			);
+			name = "Third Party Libraries";
+			sourceTree = "<group>";
+		};
+		D11B0ED71D00F64400F42943 /* SDCSegmentedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D11B0ED81D00F64400F42943 /* Source */,
+			);
+			path = SDCSegmentedViewController;
+			sourceTree = "<group>";
+		};
+		D11B0ED81D00F64400F42943 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D11B0ED91D00F64400F42943 /* SDCEmbeddedSegmentSegue.h */,
+				D11B0EDA1D00F64400F42943 /* SDCEmbeddedSegmentSegue.m */,
+				D11B0EDB1D00F64400F42943 /* SDCSegmentedViewController.h */,
+				D11B0EDC1D00F64400F42943 /* SDCSegmentedViewController.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D11B0EDF1D00F7D000F42943 /* Recent Posts */ = {
+			isa = PBXGroup;
+			children = (
+				D11B0EE01D00F86200F42943 /* RecentScenarioPostCell.swift */,
+				D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */,
+				D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */,
+			);
+			name = "Recent Posts";
+			sourceTree = "<group>";
+		};
 		D195BA211CD3EA8C00902FC6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D11B0EDF1D00F7D000F42943 /* Recent Posts */,
 				D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */,
 				D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */,
 				D195BA261CD3EB0C00902FC6 /* ScenarioPostCell.swift */,
@@ -220,6 +273,9 @@
 		D1CECAFF1CD3E37E0006809A /* Scenari */ = {
 			isa = PBXGroup;
 			children = (
+				D11B0EE81D00FC9A00F42943 /* SDCSegmentHome.h */,
+				D11B0EE91D00FC9A00F42943 /* SDCSegmentHome.m */,
+				D11B0ED61D00F61500F42943 /* Third Party Libraries */,
 				D195BA231CD3EAB500902FC6 /* Profile */,
 				D195BA221CD3EAA500902FC6 /* Create Scenario */,
 				D195BA211CD3EA8C00902FC6 /* Home */,
@@ -531,12 +587,18 @@
 			files = (
 				D1CECB031CD3E37E0006809A /* ViewController.swift in Sources */,
 				D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */,
+				D11B0EDD1D00F64400F42943 /* SDCEmbeddedSegmentSegue.m in Sources */,
 				D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */,
 				D195BA271CD3EB0C00902FC6 /* ScenarioPostCell.swift in Sources */,
+				D11B0EDE1D00F64400F42943 /* SDCSegmentedViewController.m in Sources */,
 				D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */,
+				D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */,
 				D195BA251CD3EAC200902FC6 /* ProfileViewController.swift in Sources */,
 				D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */,
+				D11B0EEA1D00FC9A00F42943 /* SDCSegmentHome.m in Sources */,
 				D1CECB091CD3E37E0006809A /* Scenari.xcdatamodeld in Sources */,
+				D11B0EE31D00F86200F42943 /* RecentScenarioPostCell.swift in Sources */,
+				D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */,
 				D1CECB011CD3E37E0006809A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +749,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Scenari-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -702,6 +765,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Scenari-Bridging-Header.h";
 			};
 			name = Release;
 		};

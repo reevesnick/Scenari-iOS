@@ -11,7 +11,7 @@ import Parse
 import ParseUI
 import MBProgressHUD
 
-class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
+class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var questionScenario:UITextView!
     @IBOutlet weak var answerAField: UITextField!
@@ -25,6 +25,10 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        questionScenario.delegate = self;
+        answerAField.delegate = self;
+        answerBField.delegate = self;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +52,10 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
         posts["answer_b"] = "B: "+answerBText!
         posts["postCreator"] = PFUser.currentUser()
         PFUser.currentUser()?.incrementKey("posts")
+        
+        if (questionText == nil && answerAText == nil && answerBText == nil){
+            
+        }
 
         
         posts.saveInBackgroundWithBlock {
@@ -94,6 +102,47 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate {
         HUD!.labelText = "Submitting..."
         
     }
+    
+    // MARK: - UITextField Delegates
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("TextField did begin editing method called")
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        print("TextField did end editing method called")
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        print("TextField should begin editing method called")
+        return true;
+    }
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        print("TextField should clear method called")
+        return true;
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        print("TextField should snd editing method called")
+        return true;
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        print("While entering the characters this method gets called")
+        return true;
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        print("TextField should return method called")
+        questionScenario.resignFirstResponder()
+        answerAField.resignFirstResponder()
+        answerBField.resignFirstResponder()
+        return true
+
+    }
+    
+    // MARK: - UITextView Delegares
+    
     
     
 
