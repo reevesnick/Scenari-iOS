@@ -10,20 +10,30 @@ import UIKit
 import Parse
 import ParseUI
 import MBProgressHUD
+import DZNEmptyDataSet
 
 
 // Method supposed to be Featured or Popular. Mistake it for Recent by Accident. Will change later
 
-class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate {
+class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var HUD: MBProgressHUD?
     var logInViewController: PFLogInViewController! = PFLogInViewController()
     var signUpViewController: PFSignUpViewController! = PFSignUpViewController()
+    
+    @IBAction func composeScenarioButton(sender: AnyObject){
+        let viewController:UIViewController = UIStoryboard(name: "CreateScenario", bundle: nil).instantiateInitialViewController()! as UIViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
+        
+        self.tableView.tableFooterView = UIView()
         
         
         // Do any additional setup after loading the view.
@@ -82,16 +92,18 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
     
         // Show the username and picture
         
-        if let postUser = object!["postCreator"] as? PFUser{
+         let postUser = object!["postCreator"] as? PFUser
             //let name =
-            let profilePicture = postUser["profile_pic"] as! PFFile
+            let profilePicture = postUser!["profile_pic"] as? PFFile
             
-            cell.userPostLabel?.text = "@" + postUser.username!;
-            
+            let usernameStatus: String! = postUser!.username
+        
+            cell.userPostLabel!.text = "@\(usernameStatus)";
+        
             cell.profilePic?.image = UIImage(named: "placeholder")
             cell.profilePic?.file = profilePicture
             cell.profilePic.loadInBackground()
-        }
+        
         /*
         if let pUserName = object?.objectForKey("PostCreator")?.includeKey("username") as? String {
             cell.userPostLabel?.text = "@" + pUserName
@@ -106,7 +118,7 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         
        
         cell.questionLabel?.text = object?.objectForKey("question") as? String
-        cell.userPostLabel?.text = object?.objectForKey("username") as? String
+        //cell.userPostLabel?.text = object?.objectForKey("username") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
         
@@ -259,6 +271,49 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         HUD!.labelText = "Submitting..."
         
     }
+    
+    // MARK: - DZEmptyView
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No Popular Post"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        //let font = UIFont(name: "akaDora", size: 60)
+
+        return NSAttributedString(string: str,attributes: attrs);
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "It might have been a connection problems fronm the server or the internet connection is offline. Pull down to refresh. If the problem persits, try again later."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str,attributes: attrs);    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
+        
+    }
+    
+    
+    // MARK: - DZEmptyView Delegate
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetShouldAllowTouch(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetDidTapView(scrollView: UIScrollView!) {
+        //NSLog("", nil)
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        // NSLog("", nil)
+    }
+    
+
     
      // MARK: - Navigation
      

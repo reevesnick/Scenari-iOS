@@ -10,19 +10,28 @@ import UIKit
 import Parse
 import ParseUI
 import MBProgressHUD
+import DZNEmptyDataSet
 
 
-class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate {
+class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
 
     var HUD: MBProgressHUD?
     var logInViewController: PFLogInViewController! = PFLogInViewController()
     var signUpViewController: PFSignUpViewController! = PFSignUpViewController()
+    
+    @IBAction func composeScenarioButton(sender: AnyObject){
+        let viewController:UIViewController = UIStoryboard(name: "CreateScenario", bundle: nil).instantiateInitialViewController()! as UIViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
         
+        self.tableView.tableFooterView = UIView()
         
         // Do any additional setup after loading the view.
     }
@@ -36,8 +45,18 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         super.viewDidAppear(animated)
         
         if (PFUser.currentUser() == nil) {
-            let loginViewController = PFLogInViewController()
+            let loginViewController = LoginView()
+            loginViewController.signUpController = SignupView()
+            loginViewController.fields = [PFLogInFields.UsernameAndPassword,
+                                          PFLogInFields.LogInButton,
+                                          PFLogInFields.SignUpButton,
+                                          PFLogInFields.PasswordForgotten,
+                                          PFLogInFields.Facebook]
+
             loginViewController.delegate = self
+            loginViewController.signUpController?.delegate = self
+
+
             self.presentViewController(loginViewController, animated: false, completion: nil)
         }
 
@@ -49,13 +68,15 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     override func queryForTable() -> PFQuery {
         let query:PFQuery = PFQuery(className:"Questions")
         query.includeKey("postCreator")
+        //query.whereKey("username", equalTo:username)
+
         
         if(objects?.count == 0)
         {
-            query.cachePolicy = PFCachePolicy.CacheThenNetwork
+           query.cachePolicy = PFCachePolicy.CacheThenNetwork
         }
         
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         return query
     }
     
@@ -78,31 +99,22 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
         // Show the username and picture
         
-        if let postUser = object!["postCreator"] as? PFUser{
+        let postUser = object!["postCreator"] as? PFUser
             //let name =
-            let profilePicture = postUser["profile_pic"] as! PFFile
-            
-            cell.userPostLabel?.text = "@" + postUser.username!;
-            
+            let profilePicture = postUser!["profile_pic"] as? PFFile
+        let pUserName: String! = postUser!.username
+        
             cell.profilePic?.image = UIImage(named: "placeholder")
             cell.profilePic?.file = profilePicture
             cell.profilePic.loadInBackground()
-        }
-        /*
-        if let pUserName = object?.objectForKey("PostCreator")?.includeKey("username") as? String {
-            cell.userPostLabel?.text = "@" + pUserName
-        }
-        */
-
-
-        
-        //let credit:String? = object!["postCreator"] as? String
         
 
+    
+            cell.userPostLabel?.text = "@\(pUserName)"
         
-       
+        
         cell.questionLabel?.text = object?.objectForKey("question") as? String
-        cell.userPostLabel?.text = object?.objectForKey("username") as? String
+        //cell.userPostLabel?.text = object?.objectForKey("username") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
         
@@ -255,6 +267,100 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         HUD!.labelText = "Submitting..."
         
     }
+    
+    // MARK: - DZEmptyView
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No Recent Posts"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str,attributes: attrs);
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "It might have been a connection problems fronm the server or the internet connection is offline. Pull down to refresh. If the problem persits, try again later."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str,attributes: attrs);    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
+        
+    }
+    
+    // MARK: - PFLoginViewDelegate
+    
+    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+        
+        
+        if (!username.isEmpty || !password.isEmpty) {
+           /* let button2Alert: UIAlertView = UIAlertView(title: "Error!", message: "Invalid Password. Please check your crendentials and try again.",
+                                                        delegate: nil, cancelButtonTitle: "Ok")
+            button2Alert.show()*/
+            return true
+        }else {
+            return false
+        }
+        
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        print("Failed to login...")
+    }
+    
+    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
+        
+    }
+    
+    // MARK: - PFSignupViewDelegate
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        let button2Alert: UIAlertView = UIAlertView(title: "Error!", message: "An error has occured. If this problem persists, please try again later",
+                                                    delegate: nil, cancelButtonTitle: "Ok")
+        button2Alert.show()
+        
+        print("FAiled to sign up...")
+        
+    }
+    
+    
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        
+        print("User dismissed sign up.")
+        
+    }
+
+    
+    
+    // MARK: - DZEmptyView Delegate
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetShouldAllowTouch(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetDidTapView(scrollView: UIScrollView!) {
+        //NSLog("", nil)
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        // NSLog("", nil)
+    }
+
     
      // MARK: - Navigation
      

@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import Fusuma
 
 class ProfileViewController: PFQueryTableViewController {
     
@@ -23,15 +24,96 @@ class ProfileViewController: PFQueryTableViewController {
     
    // var posts: [Post] = []
     
+   
     
-    @IBAction func deleteButton(sender: UIButton){
+    
+    @IBAction func settingsButton(sender: UIButton){
         
+        // 1
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        // 2
+        let uploadCamera = UIAlertAction(title: "Upload Profile Picture", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            let fusuma = FusumaViewController()
+            //fusuma.delegate = self
+            self.presentViewController(fusuma, animated: true, completion: nil)
+        })
+        
+        
+        let logoutAction = UIAlertAction(title: "Logout", style: .Destructive, handler: {
+            (alert: UIAlertAction!) -> Void in
+            PFUser.logOut()
+
+        })
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        
+        // 4
+        optionMenu.addAction(uploadCamera)
+        optionMenu.addAction(logoutAction)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    // MARK: - Fusuma Delegate
+    
+    // Return the image which is selected from camera roll or is taken via the camera.
+    func fusumaImageSelected(image: UIImage) {
+        
+        print("Image selected")
+    }
+    
+    // When camera roll is not authorized, this method is called.
+    func fusumaCameraRollUnauthorized() {
+        
+        let alert = UIAlertController(title: "Access Requested", message: "Saving your profile needs to access your photo album.", preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "Settings", style: .Default, handler: { (action) -> Void in
+            
+            if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+                UIApplication.sharedApplication().openURL(url)
+            }
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+            
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        print("Camera roll unauthorized")
+    }
+    
+    // (Optional) Return the image but called after is dismissed.
+    func fusumaDismissedWithImage(image: UIImage) {
+        
+        print("Called just after FusumaViewController is dismissed.")
+    }
+    
+    // (Optional) Called when the close button is pressed.
+    func fusumaClosed() {
+        
+        print("Called when the close button is pressed")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Hides navigation hairline
+        self.navigationController?.hidesNavigationBarHairline = true
+
         
         // Show the current visitor's username
         if let pUserName = PFUser.currentUser()?["username"] as? String {

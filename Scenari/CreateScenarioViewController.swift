@@ -36,8 +36,9 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelButton(sender: AnyObject){
-        
+    @IBAction func cancelButton(sender: UIButton){
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()! as UIViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     @IBAction func uploadButton(sender: AnyObject){
@@ -53,10 +54,7 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
         posts["postCreator"] = PFUser.currentUser()
         PFUser.currentUser()?.incrementKey("posts")
         
-        if (questionText == nil && answerAText == nil && answerBText == nil){
-            
-        }
-
+       
         
         posts.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -65,7 +63,21 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
                 PFUser.currentUser()?.incrementKey("posts")
                 self.doneHUD()
                 print("Success")
+                
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()! as UIViewController
+                self.presentViewController(viewController, animated: true, completion: nil)
             } else {
+                if (questionText.isEmpty && (answerAText?.isEmpty)! && (answerBText?.isEmpty)!){
+                    let alert = UIAlertController(title: "Error", message: "Please fill out every blank before submitting.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.HUD!.hide(true)
+                    print("Fields Empty")
+                    //loadingBar.hide(true)
+                }
+
+                
+                
                 // There was a problem, check error.description
                 let alert = UIAlertController(title: "Error", message: "Your scenario cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))

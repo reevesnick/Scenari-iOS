@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Du-07-3s8">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Scenario-->
+        <scene sceneID="zeg-V7-id4">
+            <objects>
+                <viewController title="Create Scenario" id="4fe-iK-7EZ" customClass="CreateScenarioViewController" customModule="Scenari" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WU9-p3-Hdk"/>
+                        <viewControllerLayoutGuide type="bottom" id="mfW-Cy-sMP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oYz-IL-U9d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write First Scenario Choce Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgW-me-NJQ">
+                                <rect key="frame" x="16" y="269" width="280" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write Second Scenario Choce Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-sF-bDt">
+                                <rect key="frame" x="16" y="348" width="280" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Write Your Scenario Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-cr-tiQ">
+                                <rect key="frame" x="12" y="112" width="288" height="77"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY2-sq-4NB">
+                                <rect key="frame" x="12" y="518" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Post Scenario">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButton:" destination="4fe-iK-7EZ" eventType="touchUpInside" id="ubX-or-n6U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="DgW-me-NJQ" secondAttribute="leading" id="2JU-Lu-MEj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uue-cr-tiQ" secondAttribute="trailing" constant="-4" id="6go-vC-iaF"/>
+                            <constraint firstItem="FY2-sq-4NB" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-8" id="FbH-st-xoV"/>
+                            <constraint firstItem="mfW-Cy-sMP" firstAttribute="top" secondItem="FY2-sq-4NB" secondAttribute="bottom" constant="20" id="Fcr-Le-zoR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="5iI-sF-bDt" secondAttribute="leading" id="Glf-4A-H2A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FY2-sq-4NB" secondAttribute="trailing" id="Iks-up-yAr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DgW-me-NJQ" secondAttribute="trailing" id="VKW-Zy-FhT"/>
+                            <constraint firstItem="FY2-sq-4NB" firstAttribute="centerX" secondItem="oYz-IL-U9d" secondAttribute="centerX" id="jWQ-hm-ybZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5iI-sF-bDt" secondAttribute="trailing" id="w0a-mG-Y23"/>
+                            <constraint firstItem="Uue-cr-tiQ" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-4" id="yrH-Qq-mCb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a Scenario" id="CFJ-HO-PZZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="TCq-8l-FJd">
+                            <connections>
+                                <action selector="cancelButton:" destination="4fe-iK-7EZ" id="zRg-hN-LCf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="answerAField" destination="DgW-me-NJQ" id="MNs-uO-YrI"/>
+                        <outlet property="answerBField" destination="5iI-sF-bDt" id="zx6-9H-rSY"/>
+                        <outlet property="questionScenario" destination="Uue-cr-tiQ" id="Mdo-AF-6s8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DY8-TE-teN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415" y="354"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Gi-hi-DaC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Du-07-3s8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eyd-vE-G1o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4fe-iK-7EZ" kind="relationship" relationship="rootViewController" id="y2l-q9-3om"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5p-hF-ghN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="354"/>
+        </scene>
+    </scenes>
+</document>

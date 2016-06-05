@@ -7,7 +7,7 @@
 //
 
 
-#import "SDCSegmentedViewController.h"
-#import "SDCEmbeddedSegmentSegue.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+
 
 
