@@ -1,0 +1,6 @@
+framework module SwiftDateTools {
+  umbrella header "SwiftDateTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -27,7 +27,7 @@ class SignupView: PFSignUpViewController {
         let logo = UILabel()
         logo.text = "Scenari"
         logo.textColor = UIColor.whiteColor()
-        logo.font = UIFont(name: "akaDora", size: 60)
+        logo.font = UIFont(name: "akaDora", size: 50)
         //logo.shadowColor = UIColor.lightGrayColor()
         //logo.shadowOffset = CGSizeMake(2, 2)
         signUpView?.logo = logo

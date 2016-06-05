@@ -13,6 +13,7 @@ import MBProgressHUD
 import DZNEmptyDataSet
 
 
+
 class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
 
     var HUD: MBProgressHUD?
@@ -100,37 +101,30 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         // Show the username and picture
         
         let postUser = object!["postCreator"] as? PFUser
-            //let name =
-            let profilePicture = postUser!["profile_pic"] as? PFFile
-        let pUserName: String! = postUser!.username
+            let profilePicture = postUser?["profile_pic"] as? PFFile
+            let pUserName: String! = postUser?.username
         
             cell.profilePic?.image = UIImage(named: "placeholder")
             cell.profilePic?.file = profilePicture
             cell.profilePic.loadInBackground()
-        
-
-    
             cell.userPostLabel?.text = "@\(pUserName)"
+    
+        
+        // Convert Date to String
+        let dataFormatter:NSDateFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "MM/dd/yyyy H:mm at"
+        
+        
+        cell.dateCreated?.text = dataFormatter.stringFromDate(object!.createdAt!)
+
+
+        
         
         
         cell.questionLabel?.text = object?.objectForKey("question") as? String
-        //cell.userPostLabel?.text = object?.objectForKey("username") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
         
-        
-        
-      //  cell.answerAcount?.text = "A: \(answerATotal) votes"
-       // cell.answerBcount?.text = "B: \(answerBTotal) votes"
-    
-       // cell.candidatePartyLabel?.text = object?.objectForKey("candidate_party") as? String
-        
-        /*
-        let imageFile = object?.objectForKey("candidate_picture") as? PFFile
-        cell.candidiatePicture?.image = UIImage(named: "placeholder")
-        cell.candidiatePicture?.file = imageFile
-        cell.candidiatePicture.loadInBackground()
-        */
         return cell
     }
     
@@ -168,23 +162,6 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         
         self.tableView.reloadData()
         NSLog("Top Index Path \(hitIndex?.row)")
-        /*
-        let user = PFUser.currentUser()
-        let answerObj = PFObject(className: "Questions")
-        
-        //  answerObj["answerAArray"] = user?.objectId;
-        answerObj.addUniqueObject((user?.objectId)!, forKey: "answerA_array")
-        
-        answerObj.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                // The object has been saved.
-                print("Success")
-            } else {
-                // There was a problem, check error.description
-                print("Failure")
-            }
-        }*/
         
     }
     
@@ -214,30 +191,11 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 print("Failure")
             }
         }
-        //doneHUD()
         
         
         self.tableView.reloadData()
         NSLog("Top Index Path \(hitIndex?.row)")
-        /*
-        let user = PFUser.currentUser()
-        let answerObj = PFObject(className: "Questions")
-        
-        
-        //  answerObj["answerAArray"] = user?.objectId;
-        answerObj.addUniqueObject((user?.objectId)!, forKey: "answerB_array")
-        
-        answerObj.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                // The object has been saved.
-                print("Success")
-            } else {
-                // There was a problem, check error.description
-                print("Failure")
-            }
-        }
- */
+
     }
     
     //MARK - MBProgressHUD Customization
@@ -326,7 +284,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                                                     delegate: nil, cancelButtonTitle: "Ok")
         button2Alert.show()
         
-        print("FAiled to sign up...")
+        print("Failed to sign up...")
         
     }
     

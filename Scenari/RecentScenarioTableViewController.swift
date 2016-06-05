@@ -94,9 +94,9 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         
          let postUser = object!["postCreator"] as? PFUser
             //let name =
-            let profilePicture = postUser!["profile_pic"] as? PFFile
+            let profilePicture = postUser?["profile_pic"] as? PFFile
             
-            let usernameStatus: String! = postUser!.username
+            let usernameStatus: String! = postUser?.username
         
             cell.userPostLabel!.text = "@\(usernameStatus)";
         
@@ -104,37 +104,18 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
             cell.profilePic?.file = profilePicture
             cell.profilePic.loadInBackground()
         
-        /*
-        if let pUserName = object?.objectForKey("PostCreator")?.includeKey("username") as? String {
-            cell.userPostLabel?.text = "@" + pUserName
-        }
-        */
-
-
         
-        //let credit:String? = object!["postCreator"] as? String
+        // Convert Date to String
+        let dataFormatter:NSDateFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "MM/dd/yyyy H:mm at"
         
-
         
-       
+        cell.dateCreated?.text = dataFormatter.stringFromDate(object!.createdAt!)
         cell.questionLabel?.text = object?.objectForKey("question") as? String
-        //cell.userPostLabel?.text = object?.objectForKey("username") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
         
         
-        
-      //  cell.answerAcount?.text = "A: \(answerATotal) votes"
-       // cell.answerBcount?.text = "B: \(answerBTotal) votes"
-    
-       // cell.candidatePartyLabel?.text = object?.objectForKey("candidate_party") as? String
-        
-        /*
-        let imageFile = object?.objectForKey("candidate_picture") as? PFFile
-        cell.candidiatePicture?.image = UIImage(named: "placeholder")
-        cell.candidiatePicture?.file = imageFile
-        cell.candidiatePicture.loadInBackground()
-        */
         return cell
     }
     

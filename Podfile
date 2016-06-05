@@ -17,6 +17,7 @@ pod 'PopupController'
 pod 'DZNEmptyDataSet'
 pod 'Fusuma'
 pod 'SDCSegmentedViewController'
+pod 'SwiftDateTools'
 
 
 

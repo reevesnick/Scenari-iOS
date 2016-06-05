@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="KEm-gp-lIs">
             <objects>
-                <tabBarController id="i5c-RG-scV" sceneMemberID="viewController">
+                <tabBarController id="i5c-RG-scV" customClass="TabBarController" customModule="Scenari" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TX1-wC-p52">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,6 +89,12 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hU-Rb-Xdf">
+                                            <rect key="frame" x="65" y="32" width="245" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Answer A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-sd-BxN">
                                             <rect key="frame" x="13" y="164" width="280" height="30"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
@@ -112,6 +118,7 @@
                                     <outlet property="answerAcount" destination="nIc-rV-yT8" id="feD-6Q-D9z"/>
                                     <outlet property="answerBLabel" destination="FN0-fm-SH1" id="eJF-Kl-rKm"/>
                                     <outlet property="answerBcount" destination="zqf-ME-4Tk" id="zA7-GX-W2e"/>
+                                    <outlet property="dateCreated" destination="3hU-Rb-Xdf" id="qwi-Hd-utf"/>
                                     <outlet property="profilePic" destination="7Hw-Ht-esn" id="Nmk-0p-st7"/>
                                     <outlet property="questionLabel" destination="eCk-1V-TLc" id="22R-qo-xtc"/>
                                     <outlet property="userPostLabel" destination="Eqx-K5-6sh" id="1I7-Hc-vbW"/>
@@ -324,10 +331,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfU-Pj-ych">
-                                            <rect key="frame" x="144" y="219" width="61" height="22.5"/>
-                                            <state key="normal" title="Share"/>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -345,7 +348,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="2js-dG-qkL">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="MFY-Qv-z8j">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="MFY-Qv-z8j">
                             <connections>
                                 <action selector="settingsButton:" destination="apj-NN-oHs" id="ZaO-6S-xkk"/>
                             </connections>
@@ -541,11 +544,11 @@
             </objects>
             <point key="canvasLocation" x="2974" y="2506"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="1T5-8m-smB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jdI-E1-N1A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="jiN-oX-1Ye"/>
+                    <tabBarItem key="tabBarItem" title="" id="jiN-oX-1Ye"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YRx-sz-ePK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -622,12 +625,18 @@
                                                 <action selector="answerBButton:" destination="819-mo-l0S" eventType="touchUpInside" id="tve-lC-NRY"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAX-9d-VtN" customClass="PFImageView">
-                                            <rect key="frame" x="13" y="8" width="44" height="45"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWf-yu-quu">
                                             <rect key="frame" x="65" y="13" width="252" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAX-9d-VtN" customClass="PFImageView">
+                                            <rect key="frame" x="13" y="8" width="44" height="45"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-L9-GzN">
+                                            <rect key="frame" x="65" y="32" width="245" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -648,6 +657,7 @@
                                     <outlet property="answerAcount" destination="bIo-dd-yVU" id="czd-3S-aWk"/>
                                     <outlet property="answerBLabel" destination="491-xG-yRf" id="YMI-5V-5Cx"/>
                                     <outlet property="answerBcount" destination="LFa-jQ-c38" id="BDc-P3-xnd"/>
+                                    <outlet property="dateCreated" destination="a7L-L9-GzN" id="8fo-kh-c6w"/>
                                     <outlet property="profilePic" destination="JAX-9d-VtN" id="Pbd-0r-rhi"/>
                                     <outlet property="questionLabel" destination="VbW-nR-Ia9" id="bHX-xu-eYf"/>
                                     <outlet property="userPostLabel" destination="eWf-yu-quu" id="S94-iE-Lu6"/>
@@ -671,11 +681,11 @@
             </objects>
             <point key="canvasLocation" x="1869" y="-137"/>
         </scene>
-        <!--Posts-->
+        <!--Navigation Controller-->
         <scene sceneID="G4k-gZ-HzE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hCq-ht-eJ6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Posts" id="V0k-qe-Kzz"/>
+                    <tabBarItem key="tabBarItem" title="" id="V0k-qe-Kzz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr6-IW-j7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -691,4 +701,7 @@
             <point key="canvasLocation" x="654" y="-593"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="22" height="22"/>
+    </resources>
 </document>

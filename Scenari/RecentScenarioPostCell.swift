@@ -16,6 +16,7 @@ class RecentScenarioPostCell: PFTableViewCell {
     
     @IBOutlet weak var profilePic:PFImageView!
     @IBOutlet weak var userPostLabel: UILabel!
+    @IBOutlet weak var dateCreated: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerALabel: UILabel!
     @IBOutlet weak var answerBLabel: UILabel!

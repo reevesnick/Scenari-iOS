@@ -95,6 +95,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PopupController/PopupController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDCSegmentedViewController/SDCSegmentedViewController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftDateTools/SwiftDateTools.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Bolts/Bolts.framework"
@@ -108,4 +109,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PopupController/PopupController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDCSegmentedViewController/SDCSegmentedViewController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftDateTools/SwiftDateTools.framework"
 fi

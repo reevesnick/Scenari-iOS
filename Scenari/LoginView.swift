@@ -32,6 +32,7 @@ class LoginView: PFLogInViewController {
         */
         
         // remove the parse Logo using typefont
+        
 
         let logo = UILabel()
         logo.text = "Scenari"

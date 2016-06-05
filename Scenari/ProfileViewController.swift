@@ -10,8 +10,9 @@ import UIKit
 import Parse
 import ParseUI
 import Fusuma
+import DZNEmptyDataSet
 
-class ProfileViewController: PFQueryTableViewController {
+class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     @IBOutlet weak var profileView: UIView!
 
@@ -37,7 +38,9 @@ class ProfileViewController: PFQueryTableViewController {
             (alert: UIAlertAction!) -> Void in
             
             let fusuma = FusumaViewController()
-            //fusuma.delegate = self
+             fusumaTintColor = UIColor.whiteColor()
+            
+            fusuma.delegate = self
             self.presentViewController(fusuma, animated: true, completion: nil)
         })
         
@@ -70,32 +73,49 @@ class ProfileViewController: PFQueryTableViewController {
     func fusumaImageSelected(image: UIImage) {
         
         print("Image selected")
+        userProfilePicFile.image = image
+        
+        let parseImageFile = PFFile(name: "uploaded_image.jpeg", data: UIImageJPEGRepresentation(image, 0.6)!)!
+        parseImageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                print("picture saved")
+            } else {
+                // Log details of the failure
+                print("Picture Save Error: \(error!) \(error!.userInfo)")
+            }
+        }
+
+
     }
     
     // When camera roll is not authorized, this method is called.
     func fusumaCameraRollUnauthorized() {
         
         let alert = UIAlertController(title: "Access Requested", message: "Saving your profile needs to access your photo album.", preferredStyle: .Alert)
-        
         alert.addAction(UIAlertAction(title: "Settings", style: .Default, handler: { (action) -> Void in
-            
             if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
                 UIApplication.sharedApplication().openURL(url)
             }
             
         }))
-        
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
-            
         }))
-        
         self.presentViewController(alert, animated: true, completion: nil)
-        
         print("Camera roll unauthorized")
     }
     
     // (Optional) Return the image but called after is dismissed.
     func fusumaDismissedWithImage(image: UIImage) {
+        let parseImageFile = PFFile(name: "uploaded_image.jpeg", data: UIImageJPEGRepresentation(image, 0.6)!)!
+        parseImageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                print("picture saved")
+            } else {
+                // Log details of the failure
+                print("Picture Save Error: \(error!) \(error!.userInfo)")
+            }
+        }
+
         
         print("Called just after FusumaViewController is dismissed.")
     }
@@ -111,8 +131,15 @@ class ProfileViewController: PFQueryTableViewController {
 
         // Do any additional setup after loading the view.
         
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
+        
+        self.tableView.tableFooterView = UIView()
+        
         // Hides navigation hairline
         self.navigationController?.hidesNavigationBarHairline = true
+        
+        
 
         
         // Show the current visitor's username
@@ -147,6 +174,7 @@ class ProfileViewController: PFQueryTableViewController {
                     }
             })
         }
+ 
     }
     
     override func queryForTable() -> PFQuery {
@@ -200,10 +228,61 @@ class ProfileViewController: PFQueryTableViewController {
     }
     
     
-    override func tableView(tableView: UITableView?, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
-     
+     override func tableView(tableView: UITableView?, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
+        let query = PFQuery(className: "Questions")
+        query.getObjectInBackgroundWithId("objectId") { (obj, err) -> Void in
+            if err != nil {
+                //handle error
+            } else {
+                obj!.deleteInBackground()
+            }
+        }
+        
+        
         
     }
+    
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No Posts"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        //let font = UIFont(name: "akaDora", size: 60)
+        
+        return NSAttributedString(string: str,attributes: attrs);
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "You will need to create your own scenario by going to post. And click on the compose Button."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str,attributes: attrs);    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
+        
+    }
+    
+    
+    // MARK: - DZEmptyView Delegate
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetShouldAllowTouch(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {
+        return true;
+    }
+    
+    func emptyDataSetDidTapView(scrollView: UIScrollView!) {
+        //NSLog("", nil)
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        // NSLog("", nil)
+    }
+
    // override fun
     
 

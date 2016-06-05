@@ -14,10 +14,12 @@
 		D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */; };
 		D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */; };
 		D16151B11D0242EF006CCC22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16151B01D0242EF006CCC22 /* LoginView.swift */; };
+		D168EF011D04CAC4001A1B92 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168EF001D04CAC4001A1B92 /* TabBarController.swift */; };
 		D18336401D0253EF005CDCF7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183363F1D0253EF005CDCF7 /* SignupView.swift */; };
 		D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */; };
 		D183364A1D0271FD005CDCF7 /* CreateScenario.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18336491D0271FD005CDCF7 /* CreateScenario.storyboard */; };
 		D183364C1D039160005CDCF7 /* akaDora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D183364B1D039160005CDCF7 /* akaDora.ttf */; };
+		D18336541D046AA5005CDCF7 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */; };
 		D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */; };
 		D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */; };
 		D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */; };
@@ -74,10 +76,12 @@
 		D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scenari-Bridging-Header.h"; sourceTree = "<group>"; };
 		D16151B01D0242EF006CCC22 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D168EF001D04CAC4001A1B92 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D183363F1D0253EF005CDCF7 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scenari_Login_Logo.png; sourceTree = "<group>"; };
 		D18336491D0271FD005CDCF7 /* CreateScenario.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateScenario.storyboard; sourceTree = "<group>"; };
 		D183364B1D039160005CDCF7 /* akaDora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = akaDora.ttf; path = Scenari/akaDora.ttf; sourceTree = "<group>"; };
+		D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Extension.swift"; path = "Scenari/NSDate+Extension.swift"; sourceTree = "<group>"; };
 		D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScenarioViewController.swift; sourceTree = "<group>"; };
 		D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioPostDetailViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				D183364B1D039160005CDCF7 /* akaDora.ttf */,
+				D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */,
 				D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */,
 				D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */,
 			);
@@ -272,6 +277,7 @@
 				D195BA211CD3EA8C00902FC6 /* Home */,
 				D1CECB001CD3E37E0006809A /* AppDelegate.swift */,
 				D1CECB021CD3E37E0006809A /* ViewController.swift */,
+				D168EF001D04CAC4001A1B92 /* TabBarController.swift */,
 				D1CECB041CD3E37E0006809A /* Main.storyboard */,
 				D1CECB0A1CD3E37E0006809A /* Assets.xcassets */,
 				D1CECB0C1CD3E37E0006809A /* LaunchScreen.storyboard */,
@@ -581,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1CECB031CD3E37E0006809A /* ViewController.swift in Sources */,
+				D168EF011D04CAC4001A1B92 /* TabBarController.swift in Sources */,
 				D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */,
 				D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */,
 				D195BA271CD3EB0C00902FC6 /* ScenarioPostCell.swift in Sources */,
@@ -589,6 +596,7 @@
 				D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */,
 				D195BA251CD3EAC200902FC6 /* ProfileViewController.swift in Sources */,
 				D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */,
+				D18336541D046AA5005CDCF7 /* NSDate+Extension.swift in Sources */,
 				D1CECB091CD3E37E0006809A /* Scenari.xcdatamodeld in Sources */,
 				D11B0EE31D00F86200F42943 /* RecentScenarioPostCell.swift in Sources */,
 				D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */,
