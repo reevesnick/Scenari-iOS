@@ -15,6 +15,10 @@ import DZNEmptyDataSet
 
 
 class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    
+    @IBOutlet weak var answerAButton: UIButton!
+    @IBOutlet weak var answerBButton: UIButton!
+ 
 
     var HUD: MBProgressHUD?
     var logInViewController: PFLogInViewController! = PFLogInViewController()
@@ -33,6 +37,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         self.tableView.emptyDataSetDelegate = self;
         
         self.tableView.tableFooterView = UIView()
+        
+ 
+        
         
         // Do any additional setup after loading the view.
     }
@@ -125,12 +132,17 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
         
+
+        
         return cell
     }
     
+    @IBAction func answerAnyButton(sender: UIButton){
+        
+    }
 
    
-    @IBAction func answerAButton(sender: UIButton){
+    @IBAction func answerAButton(sender: AnyObject){
         loadingHUD()
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
@@ -161,11 +173,10 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         
         
         self.tableView.reloadData()
-        NSLog("Top Index Path \(hitIndex?.row)")
-        
+        //NSLog("Top Index Path \(hitIndex?.row)")
     }
     
-    @IBAction func answerBButton(sender: UIButton){
+    @IBAction func answerBButton(sender: AnyObject){
         loadingHUD()
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
@@ -190,9 +201,10 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 self.HUD!.hide(true)
                 print("Failure")
             }
+            
+            
         }
-        
-        
+    
         self.tableView.reloadData()
         NSLog("Top Index Path \(hitIndex?.row)")
 

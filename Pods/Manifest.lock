@@ -30,6 +30,7 @@ PODS:
   - SwiftDateTools (1.0)
 
 DEPENDENCIES:
+  - Bolts
   - ChameleonFramework/Swift
   - Crashlytics
   - DZNEmptyDataSet
@@ -59,6 +60,6 @@ SPEC CHECKSUMS:
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   SwiftDateTools: e83af27a2075a60e0a8b8044e20e7d1054173056
 
-PODFILE CHECKSUM: 24bbdcce943e1c8e145a8d58b169a43ae299d34d
+PODFILE CHECKSUM: e06f769e7c68846445abd2db93f89bd55de24b3a
 
 COCOAPODS: 1.0.0.beta.6

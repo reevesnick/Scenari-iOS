@@ -23,6 +23,8 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
 
     @IBOutlet weak var userProfilePicFile: UIImageView!
     
+    
+    
    // var posts: [Post] = []
     
    
@@ -74,7 +76,7 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         
         print("Image selected")
         userProfilePicFile.image = image
-        
+        /*
         let parseImageFile = PFFile(name: "uploaded_image.jpeg", data: UIImageJPEGRepresentation(image, 0.6)!)!
         parseImageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -84,7 +86,7 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
                 print("Picture Save Error: \(error!) \(error!.userInfo)")
             }
         }
-
+*/
 
     }
     
@@ -106,6 +108,15 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
     
     // (Optional) Return the image but called after is dismissed.
     func fusumaDismissedWithImage(image: UIImage) {
+        
+        let imageData = UIImagePNGRepresentation(image)
+        let imageFile = PFFile(name: "profile_pic.png", data: imageData!)
+        
+        let user = PFUser.currentUser()
+        user?.setObject(imageFile!, forKey: "profile_pic")
+        user?.saveInBackground()
+        
+        /*
         let parseImageFile = PFFile(name: "uploaded_image.jpeg", data: UIImageJPEGRepresentation(image, 0.6)!)!
         parseImageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -115,6 +126,7 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
                 print("Picture Save Error: \(error!) \(error!.userInfo)")
             }
         }
+ */
 
         
         print("Called just after FusumaViewController is dismissed.")
@@ -222,6 +234,8 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         cell.questionLabel?.text = object?.objectForKey("question") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
         cell.answerBLabel?.text = object?.objectForKey("answer_b") as? String
+        
+
 
         
         return cell
@@ -229,8 +243,11 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
     
     
      override func tableView(tableView: UITableView?, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
+        let gameScore = PFObject(className:"Questions")
+        let objectId = gameScore.objectId!
+
         let query = PFQuery(className: "Questions")
-        query.getObjectInBackgroundWithId("objectId") { (obj, err) -> Void in
+        query.getObjectInBackgroundWithId(objectId) { (obj, err) -> Void in
             if err != nil {
                 //handle error
             } else {
