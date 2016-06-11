@@ -11,6 +11,11 @@ import Parse
 import ParseUI
 import MBProgressHUD
 import DZNEmptyDataSet
+import ParseFacebookUtils
+import FBSDKCoreKit
+import FBSDKLoginKit
+import Fabric
+import Crashlytics
 
 
 
@@ -18,6 +23,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     @IBOutlet weak var answerAButton: UIButton!
     @IBOutlet weak var answerBButton: UIButton!
+    
+    let permissions = ["public_profile", "email", "user_friends"]
+
  
 
     var HUD: MBProgressHUD?
@@ -60,14 +68,41 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                                           PFLogInFields.SignUpButton,
                                           PFLogInFields.PasswordForgotten,
                                           PFLogInFields.Facebook]
+            
+            loginViewController.facebookPermissions = ["public_profile","email"]
+
+            
+            
 
             loginViewController.delegate = self
             loginViewController.signUpController?.delegate = self
-
+            
+           /*
+            let permissions = ["public_profile","email"]
+             
+             
+            
+            PFFacebookUtils.logInWithPermissions(permissions){
+                (user: PFUser?, error: NSError?) -> Void in
+                if let user = user {
+                    if user.isNew {
+                        print("User signed up and logged in through Facebook!")
+                    } else {
+                        print("User logged in through Facebook!")
+                    }
+                } else {
+                    print("Uh oh. The user cancelled the Facebook login.")
+                }
+                
+                
+                
+            }
+            
+            
+*/
 
             self.presentViewController(loginViewController, animated: false, completion: nil)
         }
-
     }
     
     //MARK - Parse Login
@@ -111,10 +146,14 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             let profilePicture = postUser?["profile_pic"] as? PFFile
             let pUserName: String! = postUser?.username
         
+        
+ 
             cell.profilePic?.image = UIImage(named: "placeholder")
             cell.profilePic?.file = profilePicture
             cell.profilePic.loadInBackground()
             cell.userPostLabel?.text = "@\(pUserName)"
+        
+        
     
         
         // Convert Date to String
@@ -123,10 +162,6 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         
         
         cell.dateCreated?.text = dataFormatter.stringFromDate(object!.createdAt!)
-
-
-        
-        
         
         cell.questionLabel?.text = object?.objectForKey("question") as? String
         cell.answerALabel?.text = object?.objectForKey("answer_a") as? String
@@ -158,6 +193,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
+                
+                Answers.logCustomEventWithName("Answer A Votes - Total",
+                    customAttributes: [:])
 
                 self.doneHUD()
                 print("Success")
@@ -189,6 +227,10 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 PFUser.currentUser()!.incrementKey("totalVotes")
+                
+                
+                Answers.logCustomEventWithName("Answer B Votes - Total",
+                    customAttributes: [:])
 
                 // The object has been saved.
                 self.doneHUD()
@@ -273,6 +315,33 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         
+        PFFacebookUtils.logInWithPermissions(permissions, block: {
+            (user: PFUser?, error: NSError?) -> Void in
+            //switched ! to ?
+            if user == nil {
+                NSLog("Uh oh. The user cancelled the Facebook login.")
+            } else if user!.isNew {
+                let setUser = PFUser.currentUser()
+                setUser!["totalVotes"] = 0
+                setUser!["posts"] = 0
+                NSLog("User signed up and logged in through Facebook!")
+                Answers.logLoginWithMethod("Facebook First Time Users",
+                    success: true,
+                    customAttributes: [:])
+            } else {
+                NSLog("User logged in through Facebook! \(user!.username)")
+                Answers.logLoginWithMethod("Facebook Existing Users",
+                    success: true,
+                    customAttributes: [:])
+                self.dismissViewControllerAnimated(true, completion: nil)
+
+                
+            }
+        })
+        
+        Answers.logLoginWithMethod("Native Users",
+                                   success: true,
+                                   customAttributes: [:])
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -287,6 +356,12 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     // MARK: - PFSignupViewDelegate
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        let setUser = PFUser.currentUser()
+        setUser!["totalVotes"] = 0
+        setUser!["posts"] = 0
+        Answers.logSignUpWithMethod("Native Users",
+                                    success: true,
+                                    customAttributes: [:])
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
@@ -331,6 +406,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         // NSLog("", nil)
     }
 
+    
+     //MARK: - Facebook Login Setup if new user
+    
     
      // MARK: - Navigation
      

@@ -18,9 +18,6 @@ pod 'DZNEmptyDataSet'
 pod 'Fusuma'
 pod 'SDCSegmentedViewController'
 pod 'SwiftDateTools'
-pod 'Bolts'
-
-
 
 
 end

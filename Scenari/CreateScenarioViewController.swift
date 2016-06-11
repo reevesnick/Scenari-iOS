@@ -10,6 +10,8 @@ import UIKit
 import Parse
 import ParseUI
 import MBProgressHUD
+import Fabric
+import Crashlytics
 
 class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
@@ -51,8 +53,11 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
         posts["question"] = questionText
         posts["answer_a"] = "A: "+answerAText!
         posts["answer_b"] = "B: "+answerBText!
+        posts["answer_a_total"] = 0
+        posts["answer_b_total"] = 0
         posts["postCreator"] = PFUser.currentUser()
         PFUser.currentUser()?.incrementKey("posts")
+
         
        
         
@@ -63,6 +68,9 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
                 PFUser.currentUser()?.incrementKey("posts")
                 self.doneHUD()
                 print("Success")
+                
+                Answers.logCustomEventWithName("Posts - Total",
+                    customAttributes: [:])
                 
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()! as UIViewController
                 self.presentViewController(viewController, animated: true, completion: nil)
@@ -154,7 +162,18 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     // MARK: - UITextView Delegares
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        return true
+    }
     
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"  // Recognizes enter key in keyboard
+        {
+            questionScenario.resignFirstResponder()
+            return false
+        }
+        return true
+    }
     
     
 

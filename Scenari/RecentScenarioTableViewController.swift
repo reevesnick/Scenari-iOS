@@ -11,6 +11,8 @@ import Parse
 import ParseUI
 import MBProgressHUD
 import DZNEmptyDataSet
+import Fabric
+import Crashlytics
 
 
 // Method supposed to be Featured or Popular. Mistake it for Recent by Accident. Will change later
@@ -137,6 +139,10 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
+                
+                
+                Answers.logCustomEventWithName("Answer A Votes - Total",
+                    customAttributes: [:])
 
                 self.doneHUD()
                 print("Success")
@@ -186,6 +192,10 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 PFUser.currentUser()!.incrementKey("totalVotes")
+                
+                
+                Answers.logCustomEventWithName("Answer B Votes - Total",
+                    customAttributes: [:])
 
                 // The object has been saved.
                 self.doneHUD()

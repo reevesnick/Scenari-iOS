@@ -17,6 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hCq-ht-eJ6" kind="relationship" relationship="viewControllers" id="7k8-yz-fCq"/>
+                        <segue destination="Dw7-VC-AoC" kind="relationship" relationship="viewControllers" id="BXp-n6-QNc"/>
                         <segue destination="jdI-E1-N1A" kind="relationship" relationship="viewControllers" id="HhU-KL-0P8"/>
                     </connections>
                 </tabBarController>
@@ -86,13 +87,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqx-K5-6sh">
                                             <rect key="frame" x="65" y="13" width="247" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hU-Rb-Xdf">
                                             <rect key="frame" x="65" y="32" width="245" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Answer A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-sd-BxN">
@@ -239,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OuL-81-Udw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="266"/>
+            <point key="canvasLocation" x="3466" y="-766"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FQK-xu-Cy6">
@@ -364,7 +365,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMB-WV-MHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="557"/>
+            <point key="canvasLocation" x="1186" y="289"/>
         </scene>
         <!--Profile-->
         <scene sceneID="aj6-Q9-fwT">
@@ -523,7 +524,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMr-VN-4Bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="266"/>
+            <point key="canvasLocation" x="392" y="-1360"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Urk-Ui-3w3">
@@ -544,11 +545,11 @@
             </objects>
             <point key="canvasLocation" x="2974" y="2506"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="1T5-8m-smB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jdI-E1-N1A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="jiN-oX-1Ye"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="jiN-oX-1Ye"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YRx-sz-ePK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -561,7 +562,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Neh-Zr-1EV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="557"/>
+            <point key="canvasLocation" x="654" y="289"/>
         </scene>
         <!--Popular-->
         <scene sceneID="ctY-I7-zpt">
@@ -628,7 +629,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWf-yu-quu">
                                             <rect key="frame" x="65" y="13" width="252" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAX-9d-VtN" customClass="PFImageView">
@@ -637,7 +638,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-L9-GzN">
                                             <rect key="frame" x="65" y="32" width="245" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -681,11 +682,11 @@
             </objects>
             <point key="canvasLocation" x="1869" y="-137"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="G4k-gZ-HzE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hCq-ht-eJ6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="V0k-qe-Kzz"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="V0k-qe-Kzz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr6-IW-j7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -700,8 +701,156 @@
             </objects>
             <point key="canvasLocation" x="654" y="-593"/>
         </scene>
+        <!--Empty Data Set Delegate-->
+        <scene sceneID="JQv-VE-1FI">
+            <objects>
+                <tableViewController title="Search" id="G5h-db-tMI" customClass="SearchTableViewController" customModule="Scenari" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="335" sectionHeaderHeight="28" sectionFooterHeight="28" id="cQq-EM-ByF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="GDk-5J-X6c">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="G5h-db-tMI" id="c9E-u6-qms"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="335" id="TfP-uS-l6z" customClass="SearchTableCell" customModule="Scenari" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="320" height="335"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TfP-uS-l6z" id="7Ra-oo-cd9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="334.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckV-5f-HvP">
+                                            <rect key="frame" x="11" y="53" width="299" height="115"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Answer B" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y82-np-vpg">
+                                            <rect key="frame" x="13" y="202" width="280" height="41"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-2J-T8j">
+                                            <rect key="frame" x="8" y="251" width="135" height="28"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                            <state key="normal" title="A"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="B: Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-wr-PqZ">
+                                            <rect key="frame" x="177" y="295" width="135" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="A: Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56L-uo-gfp">
+                                            <rect key="frame" x="13" y="295" width="130" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTF-Rk-tVp">
+                                            <rect key="frame" x="177" y="251" width="135" height="28"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                            <state key="normal" title="B"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXi-ar-qnz">
+                                            <rect key="frame" x="65" y="13" width="247" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-Nv-Ujn">
+                                            <rect key="frame" x="65" y="32" width="245" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Answer A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu9-c2-st6">
+                                            <rect key="frame" x="13" y="164" width="280" height="30"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foQ-xv-qfH" customClass="PFImageView">
+                                            <rect key="frame" x="13" y="8" width="44" height="45"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Fu9-c2-st6" secondAttribute="trailing" constant="19" id="CS6-u3-60o"/>
+                                        <constraint firstItem="BTF-Rk-tVp" firstAttribute="leading" secondItem="NLM-2J-T8j" secondAttribute="trailing" constant="34" id="J2z-KA-OFh"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="NLM-2J-T8j" secondAttribute="leading" id="LmA-Nd-78W"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="BTF-Rk-tVp" secondAttribute="trailing" id="QZA-hR-f2W"/>
+                                        <constraint firstItem="Y82-np-vpg" firstAttribute="leading" secondItem="7Ra-oo-cd9" secondAttribute="leadingMargin" constant="5" id="Vd6-9O-hF6"/>
+                                        <constraint firstItem="Fu9-c2-st6" firstAttribute="leading" secondItem="7Ra-oo-cd9" secondAttribute="leadingMargin" constant="5" id="elJ-SB-Kbd"/>
+                                        <constraint firstItem="rpm-wr-PqZ" firstAttribute="leading" secondItem="56L-uo-gfp" secondAttribute="trailing" constant="34" id="i6b-mX-A6R"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Y82-np-vpg" secondAttribute="trailing" constant="19" id="qQt-aS-sSG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answerALabel" destination="Fu9-c2-st6" id="83o-Xc-la5"/>
+                                    <outlet property="answerAcount" destination="56L-uo-gfp" id="yT1-ms-oEc"/>
+                                    <outlet property="answerBLabel" destination="Y82-np-vpg" id="0mO-SZ-iSU"/>
+                                    <outlet property="answerBcount" destination="rpm-wr-PqZ" id="UlT-10-IOz"/>
+                                    <outlet property="dateCreated" destination="3Yg-Nv-Ujn" id="xcj-bg-a6k"/>
+                                    <outlet property="profilePic" destination="foQ-xv-qfH" id="3cG-0x-FFt"/>
+                                    <outlet property="questionLabel" destination="ckV-5f-HvP" id="q28-9j-ySZ"/>
+                                    <outlet property="userPostLabel" destination="KXi-ar-qnz" id="G8D-We-GSV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="G5h-db-tMI" id="xAT-Ho-utJ"/>
+                            <outlet property="delegate" destination="G5h-db-tMI" id="Xyl-wy-H0M"/>
+                            <outlet property="emptyDataSetDelegate" destination="G5h-db-tMI" id="SBP-WQ-rys"/>
+                            <outlet property="emptyDataSetSource" destination="G5h-db-tMI" id="DjL-bF-Q5x"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="Sz0-6w-WWg"/>
+                    <connections>
+                        <outlet property="searchBar" destination="GDk-5J-X6c" id="dsc-ZY-Ee0"/>
+                        <outlet property="searchDisplayController" destination="jlT-u8-Stv" id="5yT-Ec-60F"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pt3-V7-WT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="jlT-u8-Stv">
+                    <connections>
+                        <outlet property="delegate" destination="G5h-db-tMI" id="3Qb-dw-6No"/>
+                        <outlet property="searchContentsController" destination="G5h-db-tMI" id="H2S-vi-Z9Y"/>
+                        <outlet property="searchResultsDataSource" destination="G5h-db-tMI" id="lrf-IT-PES"/>
+                        <outlet property="searchResultsDelegate" destination="G5h-db-tMI" id="l72-CW-eLT"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1186" y="1035"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V7v-gl-2IG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dw7-VC-AoC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="QLc-i1-IHf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GFi-lM-vws">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G5h-db-tMI" kind="relationship" relationship="rootViewController" id="Mn4-nn-alO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKn-z4-6O6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="1021"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="profile" width="25" height="25"/>
         <image name="settings" width="22" height="22"/>
     </resources>
 </document>

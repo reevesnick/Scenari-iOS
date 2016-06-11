@@ -8,7 +8,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - Crashlytics (3.7.0):
+  - Crashlytics (3.7.1):
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.7)
@@ -30,7 +30,6 @@ PODS:
   - SwiftDateTools (1.0)
 
 DEPENDENCIES:
-  - Bolts
   - ChameleonFramework/Swift
   - Crashlytics
   - DZNEmptyDataSet
@@ -47,7 +46,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
@@ -60,6 +59,6 @@ SPEC CHECKSUMS:
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   SwiftDateTools: e83af27a2075a60e0a8b8044e20e7d1054173056
 
-PODFILE CHECKSUM: e06f769e7c68846445abd2db93f89bd55de24b3a
+PODFILE CHECKSUM: 91f7dbc71ccf2a27b76446d48de7681da69b87b8
 
-COCOAPODS: 1.0.0.beta.6
+COCOAPODS: 1.0.0.rc.1

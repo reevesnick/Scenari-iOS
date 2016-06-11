@@ -8,6 +8,9 @@
 import Foundation
 import Parse
 import ParseUI
+import ParseFacebookUtils
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginView: PFLogInViewController {
     
@@ -56,10 +59,14 @@ class LoginView: PFLogInViewController {
         
         // make the buttons classier
        customizeButton(logInView?.facebookButton!)
-    //customizeButton(logInView?.twitterButton!)
+        //customizeButton(logInView?.twitterButton!)
         customizeButton(logInView?.signUpButton!)
         //customizeButton(logInView?.logInButton!)
         //customizeButton(logInView?.passwordForgottenButton!)
+        
+        
+        
+
 
         
 

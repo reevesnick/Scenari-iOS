@@ -10,44 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scenari/ScenarioTableViewController.swift"
-            timestampString = "487078475.143146"
+            timestampString = "487315343.88659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "tableView(_:cellForRowAtIndexPath:object:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Scenari/ProfileViewController.swift"
-            timestampString = "487076641.632639"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:object:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Scenari/ScenarioTableViewController.swift"
-            timestampString = "487078475.143146"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "answerAnyButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -11,6 +11,7 @@ import Parse
 import ParseUI
 import Fusuma
 import DZNEmptyDataSet
+import MBProgressHUD
 
 class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
@@ -23,10 +24,8 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
 
     @IBOutlet weak var userProfilePicFile: UIImageView!
     
-    
-    
-   // var posts: [Post] = []
-    
+    var HUD:MBProgressHUD?
+
    
     
     
@@ -76,17 +75,6 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         
         print("Image selected")
         userProfilePicFile.image = image
-        /*
-        let parseImageFile = PFFile(name: "uploaded_image.jpeg", data: UIImageJPEGRepresentation(image, 0.6)!)!
-        parseImageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                print("picture saved")
-            } else {
-                // Log details of the failure
-                print("Picture Save Error: \(error!) \(error!.userInfo)")
-            }
-        }
-*/
 
     }
     
@@ -115,18 +103,6 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         let user = PFUser.currentUser()
         user?.setObject(imageFile!, forKey: "profile_pic")
         user?.saveInBackground()
-        
-        /*
-        let parseImageFile = PFFile(name: "uploaded_image.jpeg", data: UIImageJPEGRepresentation(image, 0.6)!)!
-        parseImageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                print("picture saved")
-            } else {
-                // Log details of the failure
-                print("Picture Save Error: \(error!) \(error!.userInfo)")
-            }
-        }
- */
 
         
         print("Called just after FusumaViewController is dismissed.")
@@ -203,13 +179,6 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         return query
     }
 
-    /*
-    override func viewDidAppear(animated: Bool) {
-        let postsFromThisUser = Post.query()
-        postsFromThisUser!.whereKey("username", equalTo: PFUser.currentUser()!)
-    }
-   */ 
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -242,20 +211,12 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
     }
     
     
-     override func tableView(tableView: UITableView?, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
-        let gameScore = PFObject(className:"Questions")
-        let objectId = gameScore.objectId!
+     override func tableView(tableView: UITableView?, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?){
 
-        let query = PFQuery(className: "Questions")
-        query.getObjectInBackgroundWithId(objectId) { (obj, err) -> Void in
-            if err != nil {
-                //handle error
-            } else {
-                obj!.deleteInBackground()
-            }
-        }
-        
-        
+        loadingHUD()
+        let object: PFObject = self.objects![indexPath!.row]
+        object.deleteInBackground()
+        doneHUD()
         
     }
     
@@ -299,8 +260,35 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
         // NSLog("", nil)
     }
+    
 
-   // override fun
+    //MARK - MBProgressHUD Customization
+
+    func loadingHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        //HUD!.delegate = self
+        HUD!.labelText = "Deleting..."
+        
+    }
+    
+    func doneHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
+        HUD!.customView = UIImageView(image: UIImage(named: "Checkmark.png"))
+        
+        // Set custom view mode
+        HUD!.mode = .CustomView;
+        
+        //HUD!.delegate = self;
+        HUD!.labelText = "Scenario Deleted";
+        
+        HUD!.show(true)
+        HUD!.hide(true, afterDelay:3)
+    }
     
 
     /*
