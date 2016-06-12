@@ -165,6 +165,8 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
  
     }
     
+    
+    
     override func queryForTable() -> PFQuery {
         let query:PFQuery = PFQuery(className:"Questions")
         query.whereKey("postCreator", equalTo: PFUser.currentUser()!)

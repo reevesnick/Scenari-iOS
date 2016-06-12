@@ -251,7 +251,7 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         HUD!.labelText = "Answer Submitted";
         
         HUD!.show(true)
-        HUD!.hide(true, afterDelay:3)
+        HUD!.hide(true, afterDelay:1)
     }
 
     func loadingHUD(){

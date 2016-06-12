@@ -69,7 +69,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                                           PFLogInFields.PasswordForgotten,
                                           PFLogInFields.Facebook]
             
-            loginViewController.facebookPermissions = ["public_profile","email"]
+            loginViewController.facebookPermissions = ["public_profile","email","user_friends"]
 
             
             
@@ -77,30 +77,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             loginViewController.delegate = self
             loginViewController.signUpController?.delegate = self
             
-           /*
-            let permissions = ["public_profile","email"]
-             
-             
-            
-            PFFacebookUtils.logInWithPermissions(permissions){
-                (user: PFUser?, error: NSError?) -> Void in
-                if let user = user {
-                    if user.isNew {
-                        print("User signed up and logged in through Facebook!")
-                    } else {
-                        print("User logged in through Facebook!")
-                    }
-                } else {
-                    print("Uh oh. The user cancelled the Facebook login.")
-                }
-                
-                
-                
-            }
-            
-            
-*/
-
+          
             self.presentViewController(loginViewController, animated: false, completion: nil)
         }
     }
@@ -182,8 +159,11 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
         let object = objectAtIndexPath(hitIndex)
+        let user = PFUser.currentUser()
         
         PFUser.currentUser()!.incrementKey("totalVotes")
+        object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+
 
         
         //This is where the key increment for the object
@@ -193,6 +173,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
+                
                 
                 Answers.logCustomEventWithName("Answer A Votes - Total",
                     customAttributes: [:])
@@ -219,10 +200,12 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
         let object = objectAtIndexPath(hitIndex)
+        let user = PFUser.currentUser()
         
         //this is where I incremented the key for the object
         object!.incrementKey("answer_b_total")
-        //object!.saveInBackground()
+        object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -268,7 +251,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         HUD!.labelText = "Answer Submitted";
         
         HUD!.show(true)
-        HUD!.hide(true, afterDelay:3)
+        HUD!.hide(true, afterDelay:1)
     }
 
     func loadingHUD(){
@@ -278,6 +261,42 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         HUD!.delegate = self
         HUD!.labelText = "Submitting..."
         
+    }
+    
+    
+    func loadNewFaceookData(){
+        let request:FBRequest = FBRequest.requestForMe()
+        request.startWithCompletionHandler { (connection:FBRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+            if error == nil{
+                if let dict = result as? Dictionary<String, AnyObject>{
+                    let name:String = dict["name"] as AnyObject? as! String
+                    let facebookID:String = dict["id"] as AnyObject? as! String
+                    let email:String = dict["email"] as AnyObject? as! String
+                    
+                    let pictureURL = "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
+                    
+                    let URLRequest = NSURL(string: pictureURL)
+                    let URLRequestNeeded = NSURLRequest(URL: URLRequest!)
+                    
+                    
+                    NSURLConnection.sendAsynchronousRequest(URLRequestNeeded, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?,data: NSData?, error: NSError?) -> Void in
+                        if error == nil {
+                            let picture = PFFile(data: data!)
+                            PFUser.currentUser()!.setObject(picture!, forKey: "profile_pic")
+                            PFUser.currentUser()!.saveInBackground()
+                        }
+                        else {
+                            print("Error: \(error!.localizedDescription)")
+                        }
+                    })
+                    PFUser.currentUser()!.setValue(name, forKey: "username")
+                    PFUser.currentUser()!.setValue(email, forKey: "email")
+                    PFUser.currentUser()!["totalVotes"] = 0
+                    PFUser.currentUser()!["posts"] = 0
+                    PFUser.currentUser()!.saveInBackground()
+                }
+            }
+        }
     }
     
     // MARK: - DZEmptyView
@@ -300,30 +319,23 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     // MARK: - PFLoginViewDelegate
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
-        
-        
-        if (!username.isEmpty || !password.isEmpty) {
-           /* let button2Alert: UIAlertView = UIAlertView(title: "Error!", message: "Invalid Password. Please check your crendentials and try again.",
-                                                        delegate: nil, cancelButtonTitle: "Ok")
-            button2Alert.show()*/
+        if username.characters.count != 0 && password.characters.count != 0 {
             return true
-        }else {
-            return false
         }
+        UIAlertView(title: "Missing Information", message: "Make sure you fill all the information!", delegate: nil, cancelButtonTitle: "OK").show()
+        return false
         
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-        
+      
         PFFacebookUtils.logInWithPermissions(permissions, block: {
             (user: PFUser?, error: NSError?) -> Void in
             //switched ! to ?
             if user == nil {
                 NSLog("Uh oh. The user cancelled the Facebook login.")
             } else if user!.isNew {
-                let setUser = PFUser.currentUser()
-                setUser!["totalVotes"] = 0
-                setUser!["posts"] = 0
+                self.loadNewFaceookData()
                 NSLog("User signed up and logged in through Facebook!")
                 Answers.logLoginWithMethod("Facebook First Time Users",
                     success: true,
@@ -333,6 +345,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 Answers.logLoginWithMethod("Facebook Existing Users",
                     success: true,
                     customAttributes: [:])
+              //  self.loadNewFaceookData()
+
                 self.dismissViewControllerAnimated(true, completion: nil)
 
                 
@@ -347,6 +361,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        UIAlertView(title: "Username/Password Mismatched", message: "Username and password does not exist. Please check your credentials and try again.", delegate: nil, cancelButtonTitle: "OK").show()
+
         print("Failed to login...")
     }
     
@@ -355,6 +371,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     }
     
     // MARK: - PFSignupViewDelegate
+    
+    
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         let setUser = PFUser.currentUser()
         setUser!["totalVotes"] = 0
@@ -382,6 +400,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         print("User dismissed sign up.")
         
     }
+    
+    
 
     
     
