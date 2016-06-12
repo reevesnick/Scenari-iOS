@@ -91,6 +91,20 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         
     }
     
+    @IBAction func shareButton(sender: AnyObject){
+        let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
+        let object = objectAtIndexPath(hitIndex)
+        
+        let shareQuestion: String! = object?.objectForKey("question") as? String
+        
+        
+        let shareText = "Question: \(shareQuestion) \n via Scenari"
+        let vc = UIActivityViewController(activityItems: [shareText], applicationActivities: [])
+        presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell?
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableCell
