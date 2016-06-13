@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scenari/ScenarioTableViewController.swift"
-            timestampString = "487433374.317797"
+            timestampString = "487484044.155944"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "answerAButton(_:)"
             landmarkType = "5">
          </BreakpointContent>

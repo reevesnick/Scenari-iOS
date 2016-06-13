@@ -142,18 +142,16 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
         let object = objectAtIndexPath(hitIndex)
-        
-        PFUser.currentUser()!.incrementKey("totalVotes")
+        let user = PFUser.currentUser()
 
         
-        //This is where the key increment for the object
-        object!.incrementKey("answer_a_total")
-        //object!.saveInBackground()
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
-                
+                object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+                PFUser.currentUser()!.incrementKey("totalVotes")
+                object!.incrementKey("answer_a_total")
                 
                 Answers.logCustomEventWithName("Answer A Votes - Total",
                     customAttributes: [:])
@@ -198,15 +196,16 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
         let object = objectAtIndexPath(hitIndex)
-        
-        //this is where I incremented the key for the object
-        object!.incrementKey("answer_b_total")
-        //object!.saveInBackground()
+        let user = PFUser.currentUser()
+
+       
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
-                PFUser.currentUser()!.incrementKey("totalVotes")
+                object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+                object!.incrementKey("answer_b_total")
                 
+                PFUser.currentUser()!.incrementKey("totalVotes")
                 
                 Answers.logCustomEventWithName("Answer B Votes - Total",
                     customAttributes: [:])

@@ -171,19 +171,18 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         let object = objectAtIndexPath(hitIndex)
         let user = PFUser.currentUser()
         
-        PFUser.currentUser()!.incrementKey("totalVotes")
-        object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
 
 
         
         //This is where the key increment for the object
-        object!.incrementKey("answer_a_total")
         //object!.saveInBackground()
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
-                
+                object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+                PFUser.currentUser()!.incrementKey("totalVotes")
+                object!.incrementKey("answer_a_total")
                 
                 Answers.logCustomEventWithName("Answer A Votes - Total",
                     customAttributes: [:])
@@ -213,12 +212,13 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         let user = PFUser.currentUser()
         
         //this is where I incremented the key for the object
-        object!.incrementKey("answer_b_total")
-        object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
 
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
+                object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+                object!.incrementKey("answer_b_total")
+                
                 PFUser.currentUser()!.incrementKey("totalVotes")
                 
                 
@@ -227,10 +227,12 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
 
                 // The object has been saved.
                 self.doneHUD()
+                self.HUD!.hide(true)
+                
                 print("Success")
             } else {
                 // There was a problem, check error.description
-                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description.debugDescription)!, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 self.HUD!.hide(true)
@@ -270,7 +272,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         
         HUD!.delegate = self
         HUD!.labelText = "Submitting..."
-        
+
     }
     
     

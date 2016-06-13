@@ -781,6 +781,9 @@
                                             <rect key="frame" x="8" y="251" width="135" height="28"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                             <state key="normal" title="A"/>
+                                            <connections>
+                                                <action selector="answerAButton:" destination="G5h-db-tMI" eventType="touchUpInside" id="EIb-7b-Pou"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="B: Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-wr-PqZ">
                                             <rect key="frame" x="193" y="295" width="103" height="21"/>
@@ -792,6 +795,9 @@
                                             <rect key="frame" x="177" y="251" width="135" height="28"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                             <state key="normal" title="B"/>
+                                            <connections>
+                                                <action selector="answerBButton:" destination="G5h-db-tMI" eventType="touchUpInside" id="P30-3i-UMw"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foQ-xv-qfH" customClass="PFImageView">
                                             <rect key="frame" x="13" y="8" width="44" height="45"/>

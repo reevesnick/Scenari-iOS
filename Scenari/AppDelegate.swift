@@ -26,12 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
         //Fabric SDK
         Fabric.with([Crashlytics.self])
-        
-
-
-        
+               
         //Parse Server API Key
         let configuration = ParseClientConfiguration {
             $0.applicationId = "dNNESXhlXqyY5oQNvAmK5u5VOyNspRKRRGE46II9"
@@ -43,11 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Parse Facebook Utils
         PFFacebookUtils.initializeFacebook()
         
+        //Parse Push
+
+        let userNotificationTypes: UIUserNotificationType = [.Alert, .Badge, .Sound]
+        
+        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
+ 
         // Parse Analytics Supported?
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
-        
-        
         // Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -58,6 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Store the deviceToken in the current Installation and save it to Parse
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+    }
+
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
