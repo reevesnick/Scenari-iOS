@@ -29,16 +29,16 @@
         <scene sceneID="Wlc-n3-7Tc">
             <objects>
                 <tableViewController title="Recent" id="Zye-6I-S19" customClass="ScenarioTableViewController" customModule="Scenari" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="389" sectionHeaderHeight="28" sectionFooterHeight="28" id="GtH-mj-XPN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="358" sectionHeaderHeight="28" sectionFooterHeight="28" id="GtH-mj-XPN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="389" id="vYe-cj-cha" customClass="ScenarioPostCell" customModule="Scenari" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="389"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="358" id="vYe-cj-cha" customClass="ScenarioPostCell" customModule="Scenari" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="358"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vYe-cj-cha" id="81C-Zg-D7z">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="388.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="357.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCk-1V-TLc">
@@ -96,19 +96,19 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xC-eN-yJB">
-                                            <rect key="frame" x="8" y="350" width="302" height="30"/>
-                                            <state key="normal" title="Share"/>
-                                            <connections>
-                                                <action selector="shareButton:" destination="Zye-6I-S19" eventType="touchUpInside" id="56P-z2-59t"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B: Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqf-ME-4Tk">
                                             <rect key="frame" x="180" y="295" width="130" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xC-eN-yJB">
+                                            <rect key="frame" x="8" y="324" width="302" height="30"/>
+                                            <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareButton:" destination="Zye-6I-S19" eventType="touchUpInside" id="56P-z2-59t"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="eN7-hD-c1o" secondAttribute="leading" id="3O7-tK-DNr"/>
@@ -601,16 +601,16 @@
         <scene sceneID="ctY-I7-zpt">
             <objects>
                 <tableViewController title="Popular" id="819-mo-l0S" customClass="RecentScenarioTableViewController" customModule="Scenari" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="384" sectionHeaderHeight="28" sectionFooterHeight="28" id="6tq-hE-r2N">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="358" sectionHeaderHeight="28" sectionFooterHeight="28" id="6tq-hE-r2N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="389" id="0hV-3z-uTL" customClass="RecentScenarioPostCell" customModule="Scenari" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="389"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="358" id="0hV-3z-uTL" customClass="RecentScenarioPostCell" customModule="Scenari" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="358"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0hV-3z-uTL" id="qrq-Aq-S5N">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="388.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="357.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbW-nR-Ia9">
@@ -668,19 +668,19 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDU-q6-lTH">
-                                            <rect key="frame" x="8" y="350" width="302" height="30"/>
-                                            <state key="normal" title="Share"/>
-                                            <connections>
-                                                <action selector="shareButton:" destination="819-mo-l0S" eventType="touchUpInside" id="6Wb-pO-vGw"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B: Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFa-jQ-c38">
                                             <rect key="frame" x="180" y="295" width="130" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDU-q6-lTH">
+                                            <rect key="frame" x="8" y="324" width="302" height="30"/>
+                                            <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareButton:" destination="819-mo-l0S" eventType="touchUpInside" id="6Wb-pO-vGw"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="g17-eH-sWV" secondAttribute="leading" id="19h-an-4Bu"/>
@@ -726,7 +726,7 @@
         <scene sceneID="G4k-gZ-HzE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hCq-ht-eJ6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="V0k-qe-Kzz"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="post" id="V0k-qe-Kzz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr6-IW-j7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -745,7 +745,7 @@
         <scene sceneID="JQv-VE-1FI">
             <objects>
                 <tableViewController title="Search" id="G5h-db-tMI" customClass="SearchTableViewController" customModule="Scenari" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="335" sectionHeaderHeight="28" sectionFooterHeight="28" id="cQq-EM-ByF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="381" sectionHeaderHeight="28" sectionFooterHeight="28" id="cQq-EM-ByF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -758,11 +758,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="389" id="TfP-uS-l6z" customClass="SearchTableCell" customModule="Scenari" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="136" width="320" height="389"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="381" id="TfP-uS-l6z" customClass="SearchTableCell" customModule="Scenari" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="320" height="381"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TfP-uS-l6z" id="7Ra-oo-cd9">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="388.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="380.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckV-5f-HvP">
@@ -820,19 +820,19 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9h-Bt-TfQ">
-                                            <rect key="frame" x="8" y="350" width="302" height="30"/>
-                                            <state key="normal" title="Share"/>
-                                            <connections>
-                                                <action selector="shareButton:" destination="G5h-db-tMI" eventType="touchDragInside" id="EGo-go-E5e"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="A: Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56L-uo-gfp">
                                             <rect key="frame" x="10" y="295" width="130" height="21"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9h-Bt-TfQ">
+                                            <rect key="frame" x="8" y="324" width="302" height="30"/>
+                                            <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareButton:" destination="G5h-db-tMI" eventType="touchDragInside" id="EGo-go-E5e"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="Fu9-c2-st6" secondAttribute="trailing" constant="19" id="CS6-u3-60o"/>
@@ -884,11 +884,11 @@
             </objects>
             <point key="canvasLocation" x="1186" y="1035"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Explore-->
         <scene sceneID="V7v-gl-2IG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dw7-VC-AoC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="QLc-i1-IHf"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore" id="QLc-i1-IHf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GFi-lM-vws">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -905,6 +905,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="explore" width="25" height="25"/>
+        <image name="post" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
         <image name="settings" width="22" height="22"/>
     </resources>

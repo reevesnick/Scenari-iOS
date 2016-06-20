@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write First Scenario Choce Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgW-me-NJQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Answer A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgW-me-NJQ">
                                 <rect key="frame" x="16" y="269" width="280" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write Second Scenario Choce Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-sF-bDt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Answer B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-sF-bDt">
                                 <rect key="frame" x="16" y="348" width="280" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Write Your Scenario Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-cr-tiQ">
-                                <rect key="frame" x="12" y="112" width="288" height="77"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-cr-tiQ">
+                                <rect key="frame" x="12" y="112" width="288" height="102"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -53,15 +53,26 @@
                                     <action selector="uploadButton:" destination="4fe-iK-7EZ" eventType="touchUpInside" id="ubX-or-n6U"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create your scenario below..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gS-qL-ExC">
+                                <rect key="frame" x="12" y="83" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="DgW-me-NJQ" secondAttribute="leading" id="2JU-Lu-MEj"/>
+                            <constraint firstItem="6gS-qL-ExC" firstAttribute="top" secondItem="WU9-p3-Hdk" secondAttribute="bottom" constant="19" id="3AV-OC-66J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uue-cr-tiQ" secondAttribute="trailing" constant="-4" id="6go-vC-iaF"/>
+                            <constraint firstItem="6gS-qL-ExC" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-8" id="BYS-JI-Z8R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6gS-qL-ExC" secondAttribute="trailing" id="DdE-JH-2g3"/>
                             <constraint firstItem="FY2-sq-4NB" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-8" id="FbH-st-xoV"/>
                             <constraint firstItem="mfW-Cy-sMP" firstAttribute="top" secondItem="FY2-sq-4NB" secondAttribute="bottom" constant="20" id="Fcr-Le-zoR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="5iI-sF-bDt" secondAttribute="leading" id="Glf-4A-H2A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FY2-sq-4NB" secondAttribute="trailing" id="Iks-up-yAr"/>
+                            <constraint firstItem="5iI-sF-bDt" firstAttribute="top" secondItem="DgW-me-NJQ" secondAttribute="bottom" constant="49" id="LvV-WS-oCi"/>
+                            <constraint firstItem="FY2-sq-4NB" firstAttribute="top" secondItem="5iI-sF-bDt" secondAttribute="bottom" constant="140" id="NQk-qs-94n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DgW-me-NJQ" secondAttribute="trailing" id="VKW-Zy-FhT"/>
                             <constraint firstItem="FY2-sq-4NB" firstAttribute="centerX" secondItem="oYz-IL-U9d" secondAttribute="centerX" id="jWQ-hm-ybZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5iI-sF-bDt" secondAttribute="trailing" id="w0a-mG-Y23"/>

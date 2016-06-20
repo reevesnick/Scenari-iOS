@@ -49,6 +49,7 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
         let answerAText = answerAField.text
         let answerBText = answerBField.text
         
+    
         let posts = PFObject(className: "Questions")
         posts["question"] = questionText
         posts["answer_a"] = "A: "+answerAText!
@@ -57,12 +58,14 @@ class CreateScenarioViewController: UIViewController, UITextFieldDelegate, UITex
         posts["answer_b_total"] = 0
         posts["postCreator"] = PFUser.currentUser()
         PFUser.currentUser()?.incrementKey("posts")
-
         
-       
         
         posts.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
+            /*
+            if (questionText.isEmpty || (answerAText?.isEmpty)! ||  (answerBText?.isEmpty)!){
+                UIAlertView(title: "Missing Information", message: "Make sure you fill all the information!", delegate: nil, cancelButtonTitle: "OK").show()
+            }*/
             if (success) {
                 // The object has been saved.
                 PFUser.currentUser()?.incrementKey("posts")

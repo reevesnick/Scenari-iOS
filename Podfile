@@ -15,7 +15,7 @@ pod 'ChameleonFramework/Swift'
 pod 'MBProgressHUD'
 pod 'PopupController'
 pod 'DZNEmptyDataSet'
-pod 'Fusuma'
+pod 'Fusuma' , '~> 0.4.1'
 pod 'SDCSegmentedViewController'
 pod 'SwiftDateTools'
 

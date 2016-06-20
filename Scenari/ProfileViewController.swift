@@ -12,8 +12,10 @@ import ParseUI
 import Fusuma
 import DZNEmptyDataSet
 import MBProgressHUD
+import Fabric
+import Crashlytics
 
-class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, FusumaDelegate {
     
     @IBOutlet weak var profileView: UIView!
 
@@ -33,6 +35,24 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         
         // 1
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        let shareProfile = UIAlertAction(title: "Share Profile Status", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            
+            let pUserName: String! = PFUser.currentUser()?["username"] as? String
+            let votesCount:Int! = PFUser.currentUser()!["totalVotes"] as? Int
+            let postCount:Int! = PFUser.currentUser()!["posts"] as? Int
+            
+            let shareText = "\(pUserName) has \(votesCount) total votes and had posted \(postCount) scenarios. Go to http://www.scenariapp.com to download the app."
+            
+            let vc = UIActivityViewController(activityItems: [shareText], applicationActivities: [])
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+            Answers.logCustomEventWithName("Share Profile Status",
+                customAttributes: [:])
+  
+        })
         
         // 2
         let uploadCamera = UIAlertAction(title: "Upload Profile Picture", style: .Default, handler: {
@@ -60,6 +80,7 @@ class ProfileViewController: PFQueryTableViewController, FusumaDelegate, DZNEmpt
         
         
         // 4
+        optionMenu.addAction(shareProfile)
         optionMenu.addAction(uploadCamera)
         optionMenu.addAction(logoutAction)
         optionMenu.addAction(cancelAction)

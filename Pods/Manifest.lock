@@ -34,7 +34,7 @@ DEPENDENCIES:
   - Crashlytics
   - DZNEmptyDataSet
   - Fabric
-  - Fusuma
+  - Fusuma (~> 0.4.1)
   - MBProgressHUD
   - Parse
   - ParseFacebookUtils
@@ -59,6 +59,6 @@ SPEC CHECKSUMS:
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   SwiftDateTools: e83af27a2075a60e0a8b8044e20e7d1054173056
 
-PODFILE CHECKSUM: 91f7dbc71ccf2a27b76446d48de7681da69b87b8
+PODFILE CHECKSUM: 07554fa2bcded49dbabf851e7423dc8ec151c29c
 
 COCOAPODS: 1.0.0.rc.1

@@ -18,16 +18,7 @@ class TabBarController: UITabBarController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let tabs:[UITabBarItem] = self.tabBar.items{
-            let post: UITabBarItem = tabs[0] as UITabBarItem
-            let profile: UITabBarItem = tabs[1] as UITabBarItem
-            
-            post.image = UIImage(named: "post")
-            profile.image = UIImage(named: "profile")
-        }
-        
-        
+    
         
     }
 

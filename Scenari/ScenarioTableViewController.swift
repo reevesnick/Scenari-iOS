@@ -48,7 +48,6 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         
  
         
-        
         // Do any additional setup after loading the view.
     }
     
@@ -170,9 +169,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
         let object = objectAtIndexPath(hitIndex)
         let user = PFUser.currentUser()
+        //let objectExist = object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
         
-
-
         
         //This is where the key increment for the object
         //object!.saveInBackground()
@@ -182,7 +180,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 // The object has been saved.
                 object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
                 PFUser.currentUser()!.incrementKey("totalVotes")
+
                 object!.incrementKey("answer_a_total")
+
                 
                 Answers.logCustomEventWithName("Answer A Votes - Total",
                     customAttributes: [:])
@@ -191,7 +191,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 print("Success")
             } else {
                 // There was a problem, check error.description
-                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 self.HUD!.hide(true)
@@ -211,17 +211,18 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         let object = objectAtIndexPath(hitIndex)
         let user = PFUser.currentUser()
         
+
+
+        
         //this is where I incremented the key for the object
 
         object!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
+
             if (success) {
                 object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
                 object!.incrementKey("answer_b_total")
-                
                 PFUser.currentUser()!.incrementKey("totalVotes")
-                
-                
                 Answers.logCustomEventWithName("Answer B Votes - Total",
                     customAttributes: [:])
 
@@ -232,7 +233,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                 print("Success")
             } else {
                 // There was a problem, check error.description
-                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description.debugDescription)!, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 self.HUD!.hide(true)
@@ -326,6 +327,10 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
         return UIColor.whiteColor()
         
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
+        return UIImage(named: "Timeline-EmptyView.png")!
     }
     
     // MARK: - PFLoginViewDelegate

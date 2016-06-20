@@ -12,8 +12,10 @@ import ParseUI
 import Fabric
 import Crashlytics
 import MBProgressHUD
+import DZNEmptyDataSet
 
-class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate {
+
+class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
     @IBOutlet weak var searchBar: UISearchBar!
     var HUD: MBProgressHUD?
 
@@ -44,6 +46,11 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
+        
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,17 +132,19 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
             if (success) {
                 // The object has been saved.
                 object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
-                PFUser.currentUser()!.incrementKey("totalVotes")
                 object!.incrementKey("answer_a_total")
-                
+
+                PFUser.currentUser()!.incrementKey("totalVotes")
+
                 Answers.logCustomEventWithName("Answer A Votes - Total",
                     customAttributes: [:])
                 
                 self.doneHUD()
                 print("Success")
             } else {
+                
                 // There was a problem, check error.description
-                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description)!, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 self.HUD!.hide(true)
@@ -161,10 +170,10 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 object!.addUniqueObject((user?.objectId)!, forKey: "answerVoted")
+ 
                 object!.incrementKey("answer_b_total")
-                
                 PFUser.currentUser()!.incrementKey("totalVotes")
-                
+
                 
                 Answers.logCustomEventWithName("Answer B Votes - Total",
                     customAttributes: [:])
@@ -176,7 +185,7 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
                 print("Success")
             } else {
                 // There was a problem, check error.description
-                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again. Error message: "+(error?.description.debugDescription)!, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Your vote cannot be submitted. Please check your infomation and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 self.HUD!.hide(true)
@@ -264,7 +273,29 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         
     }
 
-
+    // MARK: - DZEmptyView
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No Data"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        //let font = UIFont(name: "akaDora", size: 60)
+        
+        return NSAttributedString(string: str,attributes: attrs);
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "You can search for a scenario with any releated items."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str,attributes: attrs);    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
+        
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
+        return UIImage(named: "Search-EmptyView.png")!
+    }
+    
     /*
     // MARK: - Navigation
 

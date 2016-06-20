@@ -13,6 +13,8 @@
 		D11B0EE31D00F86200F42943 /* RecentScenarioPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE01D00F86200F42943 /* RecentScenarioPostCell.swift */; };
 		D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */; };
 		D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */; };
+		D127FE011D10E20800330ED5 /* Search-EmptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */; };
+		D127FE021D10E20800330ED5 /* Timeline-EmptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */; };
 		D16151B11D0242EF006CCC22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16151B01D0242EF006CCC22 /* LoginView.swift */; };
 		D168EF011D04CAC4001A1B92 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168EF001D04CAC4001A1B92 /* TabBarController.swift */; };
 		D18336401D0253EF005CDCF7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183363F1D0253EF005CDCF7 /* SignupView.swift */; };
@@ -82,6 +84,8 @@
 		D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentScenarioPostDetailViewController.swift; sourceTree = "<group>"; };
 		D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scenari-Bridging-Header.h"; sourceTree = "<group>"; };
+		D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Search-EmptyView.png"; path = "Empty View/Search-EmptyView.png"; sourceTree = "<group>"; };
+		D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Timeline-EmptyView.png"; path = "Empty View/Timeline-EmptyView.png"; sourceTree = "<group>"; };
 		D16151B01D0242EF006CCC22 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D168EF001D04CAC4001A1B92 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D183363F1D0253EF005CDCF7 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 		D183364D1D03938F005CDCF7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */,
+				D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */,
 				D183364B1D039160005CDCF7 /* akaDora.ttf */,
 				D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */,
 				D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */,
@@ -469,10 +475,12 @@
 			files = (
 				D183364C1D039160005CDCF7 /* akaDora.ttf in Resources */,
 				D183364A1D0271FD005CDCF7 /* CreateScenario.storyboard in Resources */,
+				D127FE011D10E20800330ED5 /* Search-EmptyView.png in Resources */,
 				D1CECB0E1CD3E37E0006809A /* LaunchScreen.storyboard in Resources */,
 				D1CECB0B1CD3E37E0006809A /* Assets.xcassets in Resources */,
 				D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */,
 				D1CECB061CD3E37E0006809A /* Main.storyboard in Resources */,
+				D127FE021D10E20800330ED5 /* Timeline-EmptyView.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
