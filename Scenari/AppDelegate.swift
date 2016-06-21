@@ -16,6 +16,7 @@ import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
 import ParseFacebookUtils
+import LaunchKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Initialize LaunchKit
+        LaunchKit.launchWithToken("PbQhmGwg52ntajnadBt2CrNrZa6tZkMIMo6DSuH57qi-")
+    
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasShownOnboarding = defaults.boolForKey("shownOnboardingBefore")
+        if !hasShownOnboarding {
+            let lk = LaunchKit.sharedInstance()
+            lk.presentOnboardingUIOnWindow(self.window!) { _ in
+                print("Showed onboarding!")
+                defaults.setBool(true, forKey: "shownOnboardingBefore")
+            }
+        }
+
         
         //Fabric SDK
         Fabric.with([Crashlytics.self])

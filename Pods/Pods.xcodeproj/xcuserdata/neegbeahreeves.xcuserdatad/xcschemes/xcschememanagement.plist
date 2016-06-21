@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LaunchKit-LaunchKitResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LaunchKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,6 +97,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>10149C869C774271FA2FB786FC099B04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
@@ -97,12 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C0A4ACB7932890C3AF0704A6B182BAA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4AF09F9B139F2DEA9ABA65C645A36F34</key>
+		<key>446290279A4C59275BE2A14C8498D17D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,7 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>919BBA75A763EB8B0999A9A0A72A7252</key>
+		<key>6347BABC009241CF3919941499776C40</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>66B430207B132208DA143D41AB4BF82C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,6 +152,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>DB5E0D52609D68E1A648D50980A31F0F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DFA5878F438E022805BFFB1CD6120E2C</key>
 		<dict>
 			<key>primary</key>
@@ -147,12 +167,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<key>E3983FB3DE40B70E3F1680DD86EF570A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2E1BCF20BF0503369F1D8ADCD192483</key>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
