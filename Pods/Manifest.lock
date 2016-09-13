@@ -15,6 +15,9 @@ PODS:
   - Facebook-iOS-SDK (3.24.4):
     - Bolts (~> 1.2)
   - Fusuma (0.4.1)
+  - LaunchKit (2.1.4):
+    - LaunchKit/LaunchKit (= 2.1.4)
+  - LaunchKit/LaunchKit (2.1.4)
   - MBProgressHUD (0.9.2)
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Fabric
   - Fusuma (~> 0.4.1)
+  - LaunchKit
   - MBProgressHUD
   - Parse
   - ParseFacebookUtils
@@ -51,6 +55,7 @@ SPEC CHECKSUMS:
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   Fusuma: 4dbaa05a2a20ab11a41f8dedbe650c904ea99625
+  LaunchKit: 95ad4fb171a0f8ea1c80aa26d4fb7bd637788f9c
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   ParseFacebookUtils: 7030f53c989fda36ad50029d90edec1327424317
@@ -59,6 +64,6 @@ SPEC CHECKSUMS:
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   SwiftDateTools: e83af27a2075a60e0a8b8044e20e7d1054173056
 
-PODFILE CHECKSUM: 07554fa2bcded49dbabf851e7423dc8ec151c29c
+PODFILE CHECKSUM: bb5f67319e1adaa8a789fa13b3d832db66497cb1
 
 COCOAPODS: 1.0.0.rc.1
