@@ -8,7 +8,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - Crashlytics (3.7.3):
+  - Crashlytics (3.8.1):
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.8)
@@ -18,8 +18,8 @@ PODS:
     - LaunchKit/LaunchKit (= 2.1.4)
   - LaunchKit/LaunchKit (2.1.4)
   - MBProgressHUD (1.0.0)
-  - Parse (1.13.0):
-    - Bolts/Tasks (~> 1.6)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
   - ParseFacebookUtils (1.10.0):
     - Bolts/Tasks (~> 1.5)
     - Facebook-iOS-SDK (~> 3.24)
@@ -44,13 +44,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Crashlytics: 76f6beaff70acf226139582c09c78461597c2b98
+  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   LaunchKit: 95ad4fb171a0f8ea1c80aa26d4fb7bd637788f9c
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseFacebookUtils: 7030f53c989fda36ad50029d90edec1327424317
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
