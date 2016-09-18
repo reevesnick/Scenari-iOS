@@ -9,13 +9,13 @@
 import UIKit
 import Parse
 import ParseUI
-import Fusuma
+//import Fusuma
 import DZNEmptyDataSet
 import MBProgressHUD
 import Fabric
 import Crashlytics
 
-class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, FusumaDelegate {
+class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate/*, FusumaDelegate*/ {
     
     @IBOutlet weak var profileView: UIView!
 
@@ -55,6 +55,7 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
         })
         
         // 2
+/*
         let uploadCamera = UIAlertAction(title: "Upload Profile Picture", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             
@@ -64,7 +65,7 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
             fusuma.delegate = self
             self.presentViewController(fusuma, animated: true, completion: nil)
         })
-        
+        */
         
         let logoutAction = UIAlertAction(title: "Logout", style: .Destructive, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -81,7 +82,7 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
         
         // 4
         optionMenu.addAction(shareProfile)
-        optionMenu.addAction(uploadCamera)
+       // optionMenu.addAction(uploadCamera)
         optionMenu.addAction(logoutAction)
         optionMenu.addAction(cancelAction)
         
@@ -92,15 +93,15 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
     // MARK: - Fusuma Delegate
     
     // Return the image which is selected from camera roll or is taken via the camera.
-    func fusumaImageSelected(image: UIImage) {
+    /*func fusumaImageSelected(image: UIImage) {
         
         print("Image selected")
         userProfilePicFile.image = image
 
     }
-    
+ */
     // When camera roll is not authorized, this method is called.
-    func fusumaCameraRollUnauthorized() {
+ /*   func fusumaCameraRollUnauthorized() {
         
         let alert = UIAlertController(title: "Access Requested", message: "Saving your profile needs to access your photo album.", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Settings", style: .Default, handler: { (action) -> Void in
@@ -114,9 +115,9 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
         self.presentViewController(alert, animated: true, completion: nil)
         print("Camera roll unauthorized")
     }
-    
+  */
     // (Optional) Return the image but called after is dismissed.
-    func fusumaDismissedWithImage(image: UIImage) {
+ /*   func fusumaDismissedWithImage(image: UIImage) {
         
         let imageData = UIImagePNGRepresentation(image)
         let imageFile = PFFile(name: "profile_pic.png", data: imageData!)
@@ -128,13 +129,13 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
         
         print("Called just after FusumaViewController is dismissed.")
     }
-    
+   */
     // (Optional) Called when the close button is pressed.
-    func fusumaClosed() {
+ /*   func fusumaClosed() {
         
         print("Called when the close button is pressed")
     }
-    
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -148,7 +149,7 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
         // Hides navigation hairline
         self.navigationController?.hidesNavigationBarHairline = true
         
-        
+ 
 
         
         // Show the current visitor's username

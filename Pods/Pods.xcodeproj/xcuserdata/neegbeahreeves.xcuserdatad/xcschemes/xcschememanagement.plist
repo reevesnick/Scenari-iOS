@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Fusuma.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>LaunchKit-LaunchKitResources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -74,17 +69,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PopupController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SDCSegmentedViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftDateTools.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -97,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>10149C869C774271FA2FB786FC099B04</key>
+		<key>1208DD7074DFC1F8E6FBB14507D36059</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>446290279A4C59275BE2A14C8498D17D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>52D82BFDD1E808D9CB257431922C1EE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>78CB206C231F7B628C796EDA17EF0CD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9726081DC1A2E1E7B13F886C83BF1D39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,27 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB5E0D52609D68E1A648D50980A31F0F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DFA5878F438E022805BFFB1CD6120E2C</key>
+		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E1F78B1C5F8F2CCD0E68552EAF2B9B52</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3983FB3DE40B70E3F1680DD86EF570A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

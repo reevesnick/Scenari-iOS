@@ -21,7 +21,6 @@
 		D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */; };
 		D183364A1D0271FD005CDCF7 /* CreateScenario.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18336491D0271FD005CDCF7 /* CreateScenario.storyboard */; };
 		D183364C1D039160005CDCF7 /* akaDora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D183364B1D039160005CDCF7 /* akaDora.ttf */; };
-		D18336541D046AA5005CDCF7 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */; };
 		D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */; };
 		D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */; };
 		D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */; };
@@ -92,7 +91,6 @@
 		D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scenari_Login_Logo.png; sourceTree = "<group>"; };
 		D18336491D0271FD005CDCF7 /* CreateScenario.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateScenario.storyboard; sourceTree = "<group>"; };
 		D183364B1D039160005CDCF7 /* akaDora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = akaDora.ttf; path = Scenari/akaDora.ttf; sourceTree = "<group>"; };
-		D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Extension.swift"; path = "Scenari/NSDate+Extension.swift"; sourceTree = "<group>"; };
 		D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScenarioViewController.swift; sourceTree = "<group>"; };
 		D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioPostDetailViewController.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 				D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */,
 				D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */,
 				D183364B1D039160005CDCF7 /* akaDora.ttf */,
-				D18336531D046AA5005CDCF7 /* NSDate+Extension.swift */,
 				D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */,
 				D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */,
 			);
@@ -353,7 +350,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1CECB281CD3E37E0006809A /* Build configuration list for PBXNativeTarget "Scenari" */;
 			buildPhases = (
-				6407380B4604919F894C3E45 /* 📦 Check Pods Manifest.lock */,
+				6407380B4604919F894C3E45 /* [CP] Check Pods Manifest.lock */,
 				AB120A465C082F08196E28C7 /* [CP] Check Pods Manifest.lock */,
 				D1CECAF91CD3E37E0006809A /* Sources */,
 				D1CECAFA1CD3E37E0006809A /* Frameworks */,
@@ -377,7 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1CECB2B1CD3E37E0006809A /* Build configuration list for PBXNativeTarget "ScenariTests" */;
 			buildPhases = (
-				97A8D2C62F4345837D517C03 /* 📦 Check Pods Manifest.lock */,
+				97A8D2C62F4345837D517C03 /* [CP] Check Pods Manifest.lock */,
 				181547B3BC15C3CB4B6FAF69 /* [CP] Check Pods Manifest.lock */,
 				D1CECB101CD3E37E0006809A /* Sources */,
 				D1CECB111CD3E37E0006809A /* Frameworks */,
@@ -401,13 +398,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1CECB2E1CD3E37E0006809A /* Build configuration list for PBXNativeTarget "ScenariUITests" */;
 			buildPhases = (
-				7B235B035E0283788121B3B9 /* 📦 Check Pods Manifest.lock */,
+				7B235B035E0283788121B3B9 /* [CP] Check Pods Manifest.lock */,
 				961D3ADBD0E254CA7BDCB740 /* [CP] Check Pods Manifest.lock */,
 				D1CECB1B1CD3E37E0006809A /* Sources */,
 				D1CECB1C1CD3E37E0006809A /* Frameworks */,
 				D1CECB1D1CD3E37E0006809A /* Resources */,
 				F052D99CB1AFC9F9F5442B18 /* [CP] Copy Pods Resources */,
 				024E612DF391FF6FC6BB5501 /* 📦 Copy Pods Resources */,
+				115CFEEAD4EF7BFA3E491EC1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -546,6 +544,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scenari/Pods-Scenari-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		115CFEEAD4EF7BFA3E491EC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		181547B3BC15C3CB4B6FAF69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -576,19 +589,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6407380B4604919F894C3E45 /* 📦 Check Pods Manifest.lock */ = {
+		6407380B4604919F894C3E45 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		65552E500C23D5476BF25873 /* 📦 Embed Pods Frameworks */ = {
@@ -606,19 +619,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7B235B035E0283788121B3B9 /* 📦 Check Pods Manifest.lock */ = {
+		7B235B035E0283788121B3B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9579D1A7E9D5ED4E510635D4 /* 📦 Copy Pods Resources */ = {
@@ -651,19 +664,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		97A8D2C62F4345837D517C03 /* 📦 Check Pods Manifest.lock */ = {
+		97A8D2C62F4345837D517C03 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AB120A465C082F08196E28C7 /* [CP] Check Pods Manifest.lock */ = {
@@ -772,7 +785,6 @@
 				D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */,
 				D195BA251CD3EAC200902FC6 /* ProfileViewController.swift in Sources */,
 				D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */,
-				D18336541D046AA5005CDCF7 /* NSDate+Extension.swift in Sources */,
 				D1CECB091CD3E37E0006809A /* Scenari.xcdatamodeld in Sources */,
 				D11B0EE31D00F86200F42943 /* RecentScenarioPostCell.swift in Sources */,
 				D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */,
@@ -875,6 +887,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -912,6 +925,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
