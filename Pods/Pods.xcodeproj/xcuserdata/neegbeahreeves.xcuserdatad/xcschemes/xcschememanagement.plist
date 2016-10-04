@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Fusuma.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LaunchKit-LaunchKitResources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,17 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1208DD7074DFC1F8E6FBB14507D36059</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4727B3787F60FC82BCFDE3EA2B6784F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78CB206C231F7B628C796EDA17EF0CD8</key>
+		<key>7380ABD049E12DCFEC9B9E1D2D52C627</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -128,6 +133,11 @@
 			<true/>
 		</dict>
 		<key>B287AC5C369BA4C0A2318B26068DDD0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1634D034D95F19033EF0101CE5076F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

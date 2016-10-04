@@ -15,7 +15,7 @@ pod 'ChameleonFramework/Swift'
 pod 'MBProgressHUD'
 #pod 'PopupController'
 pod 'DZNEmptyDataSet'
-#pod 'Fusuma'
+pod 'Fusuma', '~>0.5'
 #pod 'Fusuma', :git => 'https://github.com/pruthvikar/Fusuma.git', :commit => '503865a' # Swift 3.0 Version
 pod 'SDCSegmentedViewController'
 #pod 'SwiftDateTools'
