@@ -29,11 +29,11 @@ class SearchTableCell: PFTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        /*
+        
         self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width/2
         self.profilePic.clipsToBounds = true;
         
-        */
+        
         //profilePic.layer.cornerRadius = profilePic.frame.size.width/2
         //profilePic.clipsToBounds = true;
         
