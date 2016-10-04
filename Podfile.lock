@@ -11,7 +11,7 @@ PODS:
   - Crashlytics (3.8.2):
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
-  - Fabric (1.6.8)
+  - Fabric (1.6.9)
   - Facebook-iOS-SDK (3.24.4):
     - Bolts (~> 1.2)
   - LaunchKit (2.1.4):
@@ -46,7 +46,7 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   LaunchKit: 95ad4fb171a0f8ea1c80aa26d4fb7bd637788f9c
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
 
-PODFILE CHECKSUM: ed910d67f43ec2d8bdc52fb20fb8ec94075b9927
+PODFILE CHECKSUM: 9e2e931cf710dab86878e88b3cb2808705226349
 
 COCOAPODS: 1.1.0.rc.2

@@ -16,6 +16,9 @@
 		D127FE011D10E20800330ED5 /* Search-EmptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */; };
 		D127FE021D10E20800330ED5 /* Timeline-EmptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */; };
 		D16151B11D0242EF006CCC22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16151B01D0242EF006CCC22 /* LoginView.swift */; };
+		D167E4081DA2DEF6009269BE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E4071DA2DEF6009269BE /* MessageUI.framework */; };
+		D167E40A1DA2DF06009269BE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E4091DA2DF06009269BE /* AdSupport.framework */; };
+		D167E40C1DA2DF0F009269BE /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E40B1DA2DF0F009269BE /* Messages.framework */; };
 		D168EF011D04CAC4001A1B92 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168EF001D04CAC4001A1B92 /* TabBarController.swift */; };
 		D18336401D0253EF005CDCF7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D183363F1D0253EF005CDCF7 /* SignupView.swift */; };
 		D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */; };
@@ -86,6 +89,9 @@
 		D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Search-EmptyView.png"; path = "Empty View/Search-EmptyView.png"; sourceTree = "<group>"; };
 		D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Timeline-EmptyView.png"; path = "Empty View/Timeline-EmptyView.png"; sourceTree = "<group>"; };
 		D16151B01D0242EF006CCC22 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D167E4071DA2DEF6009269BE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D167E4091DA2DF06009269BE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D167E40B1DA2DF0F009269BE /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		D168EF001D04CAC4001A1B92 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D183363F1D0253EF005CDCF7 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scenari_Login_Logo.png; sourceTree = "<group>"; };
@@ -137,6 +143,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D167E40C1DA2DF0F009269BE /* Messages.framework in Frameworks */,
+				D167E40A1DA2DF06009269BE /* AdSupport.framework in Frameworks */,
+				D167E4081DA2DEF6009269BE /* MessageUI.framework in Frameworks */,
 				D195BA3B1CD3EC3C00902FC6 /* libsqlite3.tbd in Frameworks */,
 				D195BA391CD3EC3400902FC6 /* libz.tbd in Frameworks */,
 				D195BA371CD3EC2900902FC6 /* SystemConfiguration.framework in Frameworks */,
@@ -178,6 +187,9 @@
 		371B45AEA17A87D8FD11F28B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D167E40B1DA2DF0F009269BE /* Messages.framework */,
+				D167E4091DA2DF06009269BE /* AdSupport.framework */,
+				D167E4071DA2DEF6009269BE /* MessageUI.framework */,
 				D195BA3A1CD3EC3C00902FC6 /* libsqlite3.tbd */,
 				D195BA381CD3EC3400902FC6 /* libz.tbd */,
 				D195BA361CD3EC2900902FC6 /* SystemConfiguration.framework */,
@@ -430,6 +442,7 @@
 					D1CECAFC1CD3E37E0006809A = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = L6WD86F9N5;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -943,7 +956,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Everette Scolum (M67W4TFXJ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Everette Scolum (M67W4TFXJ5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -976,7 +989,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9a27da2f-e668-45d1-b112-42f936a7e46e";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Scenari-Bridging-Header.h";
 			};
 			name = Debug;
@@ -989,7 +1002,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1021,7 +1035,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "48b19073-d714-4c08-a1e2-8a8ab88f346a";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Scenari-Bridging-Header.h";
 			};
 			name = Release;

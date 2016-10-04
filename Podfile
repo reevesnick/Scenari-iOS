@@ -16,11 +16,20 @@ pod 'MBProgressHUD'
 #pod 'PopupController'
 pod 'DZNEmptyDataSet'
 #pod 'Fusuma'
+#pod 'Fusuma', :git => 'https://github.com/pruthvikar/Fusuma.git', :commit => '503865a' # Swift 3.0 Version
 pod 'SDCSegmentedViewController'
 #pod 'SwiftDateTools'
 pod 'LaunchKit'
 
 
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
 end
 
 target 'ScenariTests' do

@@ -16,10 +16,11 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Fabric
 import Crashlytics
+import MessageUI
 
 
 
-class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var answerAButton: UIButton!
     @IBOutlet weak var answerBButton: UIButton!
@@ -161,8 +162,43 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         presentViewController(vc, animated: true, completion: nil)
         
     }
-
+    
+    
+    @objc
+    @IBAction func reportButton(_: AnyObject){
+        let mailComposeViewControlller = configuredMailComposeViewController();
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewControlller, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    
+ 
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients(["scenarireport@brownboxworks.atlassian.net"]) //Mail to
+        mailComposerVC.setSubject("Report ObjectID: ") // Subject
+        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        
+        return mailComposerVC
+    }
+
+
+    
+    // MARK: MFMailComposeViewControllerDelegate Method
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func answerAButton(sender: AnyObject){
         loadingHUD()
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
@@ -391,6 +427,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+          UIAlertView(title: "Disclaimer", message: "By signing up, you agree to the Scenari Privacy Policy and Term of Service.", delegate: nil, cancelButtonTitle: "OK").show()
+        
+        
         let setUser = PFUser.currentUser()
         setUser!["totalVotes"] = 0
         setUser!["posts"] = 0
@@ -413,14 +452,9 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        
         print("User dismissed sign up.")
         
     }
-    
-    
-
-    
     
     // MARK: - DZEmptyView Delegate
     func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
