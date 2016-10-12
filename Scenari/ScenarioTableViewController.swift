@@ -165,39 +165,49 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     
     @objc
-    @IBAction func reportButton(_: AnyObject){
-        let mailComposeViewControlller = configuredMailComposeViewController();
-        if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewControlller, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
-        }
-    }
-    
-    
- 
-    func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
-        sendMailErrorAlert.show()
-    }
+    @IBAction func reportButton(sender: AnyObject){
+        let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
+        let object = objectAtIndexPath(hitIndex)
+        
+        let shareQuestion: String! = object?.objectForKey("question") as? String
+
+        
+        let emailTitle = "Report Post: Object #: \(object?.objectId!)";
+        let messageBody = "Post Review Question: \(shareQuestion)";
+        let toRecipents = ["scenarireport@brownboxworks.atlassian.net"];
+        let mc = MFMailComposeViewController();
+        mc.mailComposeDelegate = self;
+        mc.setSubject(emailTitle);
+        mc.setMessageBody(messageBody, isHTML: false);
+        mc.setToRecipients(toRecipents);
+        
+        self.presentViewController(mc, animated: true, completion: nil)
    
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
-        mailComposerVC.setToRecipients(["scenarireport@brownboxworks.atlassian.net"]) //Mail to
-        mailComposerVC.setSubject("Report ObjectID: ") // Subject
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
-        
-        return mailComposerVC
     }
-
+    
 
     
+
     // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+      switch result.rawValue {
+        case MFMailComposeResult.Cancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResult.Saved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResult.Sent.rawValue:
+            print("Mail sent")
+            reportSentHUD()
+        case MFMailComposeResult.Failed.rawValue:
+            print("Mail sent failure: %@", [error!.localizedDescription])
+        default:
+            break
+        }
+        controller.dismissViewControllerAnimated(true,completion: nil)
     }
+    
+    
     
     @IBAction func answerAButton(sender: AnyObject){
         loadingHUD()
@@ -303,6 +313,42 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
         HUD!.hide(true, afterDelay:1)
     }
 
+    func reportSentHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        // The sample image is based on the work by http://www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
+        // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
+        HUD!.customView = UIImageView(image: UIImage(named: "Checkmark.png"))
+        
+        // Set custom view mode
+        HUD!.mode = .CustomView;
+        
+        HUD!.delegate = self;
+        HUD!.labelText = "Report Sent";
+        
+        HUD!.show(true)
+        HUD!.hide(true, afterDelay:1)
+    }
+    
+    func reportSentFailedHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        // The sample image is based on the work by http://www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
+        // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
+        HUD!.customView = UIImageView(image: UIImage(named: "Checkmark.png"))
+        
+        // Set custom view mode
+        HUD!.mode = .CustomView;
+        
+        HUD!.delegate = self;
+        HUD!.labelText = "Report Fail to Send";
+        
+        HUD!.show(true)
+        HUD!.hide(true, afterDelay:1)
+    }
+    
     func loadingHUD(){
         HUD = MBProgressHUD(view: self.navigationController!.view)
         self.navigationController!.view.addSubview(HUD!)
@@ -427,7 +473,7 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-          UIAlertView(title: "Disclaimer", message: "By signing up, you agree to the Scenari Privacy Policy and Term of Service.", delegate: nil, cancelButtonTitle: "OK").show()
+          UIAlertView(title: "Disclaimer", message: "By signing up to Scenari, you are agreeing to the Scenari Privacy Policy and Terms of Service.", delegate: nil, cancelButtonTitle: "OK").show()
         
         
         let setUser = PFUser.currentUser()

@@ -13,11 +13,12 @@ import MBProgressHUD
 import DZNEmptyDataSet
 import Fabric
 import Crashlytics
+import MessageUI
 
 
 // Method supposed to be Featured or Popular. Mistake it for Recent by Accident. Will change later
 
-class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MBProgressHUDDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, MFMailComposeViewControllerDelegate {
 
     var HUD: MBProgressHUD?
     var logInViewController: PFLogInViewController! = PFLogInViewController()
@@ -119,6 +120,28 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         
         
         return cell
+    }
+
+    @objc
+    @IBAction func reportButton(sender: AnyObject){
+        let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
+        let object = objectAtIndexPath(hitIndex)
+        
+        let shareQuestion: String! = object?.objectForKey("question") as? String
+        
+        
+        let emailTitle = "Report Post: Object #: \(object?.objectId!)";
+        let messageBody = "Post Review Question: \(shareQuestion)";
+        let toRecipents = ["scenarireport@brownboxworks.atlassian.net"];
+        let mc = MFMailComposeViewController();
+        mc.mailComposeDelegate = self;
+        mc.setSubject(emailTitle);
+        mc.setMessageBody(messageBody, isHTML: false);
+        mc.setToRecipients(toRecipents);
+        
+        self.presentViewController(mc, animated: true, completion: nil)
+
     }
     
     @IBAction func shareButton(sender: AnyObject){
@@ -252,6 +275,24 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
  */
     }
     
+    // MARK: MFMailComposeViewControllerDelegate Method
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResult.Cancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResult.Saved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResult.Sent.rawValue:
+            print("Mail sent")
+            reportSentHUD()
+        case MFMailComposeResult.Failed.rawValue:
+            print("Mail sent failure: %@", [error!.localizedDescription])
+        default:
+            break
+        }
+        controller.dismissViewControllerAnimated(true,completion: nil)
+    }
+    
     //MARK - MBProgressHUD Customization
     func doneHUD(){
         HUD = MBProgressHUD(view: self.navigationController!.view)
@@ -278,6 +319,24 @@ class RecentScenarioTableViewController: PFQueryTableViewController, PFLogInView
         HUD!.delegate = self
         HUD!.labelText = "Submitting..."
         
+    }
+    
+    func reportSentHUD(){
+        HUD = MBProgressHUD(view: self.navigationController!.view)
+        self.navigationController!.view.addSubview(HUD!)
+        
+        // The sample image is based on the work by http://www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
+        // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
+        HUD!.customView = UIImageView(image: UIImage(named: "Checkmark.png"))
+        
+        // Set custom view mode
+        HUD!.mode = .CustomView;
+        
+        HUD!.delegate = self;
+        HUD!.labelText = "Report Sent";
+        
+        HUD!.show(true)
+        HUD!.hide(true, afterDelay:1)
     }
     
     // MARK: - DZEmptyView

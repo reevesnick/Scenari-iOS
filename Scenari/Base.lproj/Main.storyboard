@@ -551,7 +551,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a0s-P0-8Qp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Create" id="vQN-0n-pRz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3v-bi-gOx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="N3v-bi-gOx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -567,7 +567,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cLp-te-Z88" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="4SE-zU-Jf1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HQg-Qp-RCB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HQg-Qp-RCB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -586,7 +586,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jdI-E1-N1A" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="jiN-oX-1Ye"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YRx-sz-ePK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YRx-sz-ePK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -605,7 +605,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hCq-ht-eJ6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="post" id="V0k-qe-Kzz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr6-IW-j7h">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zr6-IW-j7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -718,6 +718,9 @@
                                             <frame key="frameInset" minX="8" minY="362" height="30" maxX="13"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Report"/>
+                                            <connections>
+                                                <action selector="reportButton:" destination="G5h-db-tMI" eventType="touchUpInside" id="9pb-QE-WJo"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B: Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-wr-PqZ">
                                             <frame key="frameInset" minY="295" width="129.5" height="21" maxX="9"/>
@@ -771,7 +774,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dw7-VC-AoC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="explore" id="QLc-i1-IHf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GFi-lM-vws">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GFi-lM-vws">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -852,6 +855,9 @@
                                             <frame key="frameInset" minY="324" width="134.5" height="30" maxX="8.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Report"/>
+                                            <connections>
+                                                <action selector="reportButton:" destination="Ryc-EG-NHa" eventType="touchUpInside" id="ZAN-mq-vLq"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrW-7i-PJC">
                                             <frame key="frameInset" minY="251" width="134.5" height="28" maxX="8.5"/>
