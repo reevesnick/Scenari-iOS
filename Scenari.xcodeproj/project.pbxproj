@@ -39,6 +39,8 @@
 		D195BA371CD3EC2900902FC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D195BA361CD3EC2900902FC6 /* SystemConfiguration.framework */; };
 		D195BA391CD3EC3400902FC6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D195BA381CD3EC3400902FC6 /* libz.tbd */; };
 		D195BA3B1CD3EC3C00902FC6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D195BA3A1CD3EC3C00902FC6 /* libsqlite3.tbd */; };
+		D197F8701DB01B6E0010456B /* OtherSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D197F86F1DB01B6E0010456B /* OtherSettings.storyboard */; };
+		D197F8731DB01C440010456B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197F8721DB01C440010456B /* SettingsTableViewController.swift */; };
 		D19C6C1F1D0BBF7400953E55 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C6C1E1D0BBF7400953E55 /* SearchTableViewController.swift */; };
 		D19C6C211D0BC21700953E55 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C6C201D0BC21700953E55 /* SearchTableCell.swift */; };
 		D1CECB011CD3E37E0006809A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CECB001CD3E37E0006809A /* AppDelegate.swift */; };
@@ -112,6 +114,8 @@
 		D195BA361CD3EC2900902FC6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D195BA381CD3EC3400902FC6 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D195BA3A1CD3EC3C00902FC6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D197F86F1DB01B6E0010456B /* OtherSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OtherSettings.storyboard; sourceTree = "<group>"; };
+		D197F8721DB01C440010456B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D19C6C1E1D0BBF7400953E55 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D19C6C201D0BC21700953E55 /* SearchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
 		D1CECAFD1CD3E37E0006809A /* Scenari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenari.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +283,14 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		D197F8711DB01C2B0010456B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D197F8721DB01C440010456B /* SettingsTableViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		D19C6C1D1D0BBF4F00953E55 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +331,7 @@
 		D1CECAFF1CD3E37E0006809A /* Scenari */ = {
 			isa = PBXGroup;
 			children = (
+				D197F8711DB01C2B0010456B /* Settings */,
 				D19C6C1D1D0BBF4F00953E55 /* Search */,
 				D16151AF1D0242CE006CCC22 /* Login */,
 				D195BA231CD3EAB500902FC6 /* Profile */,
@@ -333,6 +346,7 @@
 				D1CECB0C1CD3E37E0006809A /* LaunchScreen.storyboard */,
 				D1CECB0F1CD3E37E0006809A /* Info.plist */,
 				D1CECB071CD3E37E0006809A /* Scenari.xcdatamodeld */,
+				D197F86F1DB01B6E0010456B /* OtherSettings.storyboard */,
 			);
 			path = Scenari;
 			sourceTree = "<group>";
@@ -489,6 +503,7 @@
 				D127FE011D10E20800330ED5 /* Search-EmptyView.png in Resources */,
 				D1CECB0E1CD3E37E0006809A /* LaunchScreen.storyboard in Resources */,
 				D1CECB0B1CD3E37E0006809A /* Assets.xcassets in Resources */,
+				D197F8701DB01B6E0010456B /* OtherSettings.storyboard in Resources */,
 				D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */,
 				D1CECB061CD3E37E0006809A /* Main.storyboard in Resources */,
 				D127FE021D10E20800330ED5 /* Timeline-EmptyView.png in Resources */,
@@ -795,6 +810,7 @@
 				D195BA271CD3EB0C00902FC6 /* ScenarioPostCell.swift in Sources */,
 				D18336401D0253EF005CDCF7 /* SignupView.swift in Sources */,
 				D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */,
+				D197F8731DB01C440010456B /* SettingsTableViewController.swift in Sources */,
 				D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */,
 				D195BA251CD3EAC200902FC6 /* ProfileViewController.swift in Sources */,
 				D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */,

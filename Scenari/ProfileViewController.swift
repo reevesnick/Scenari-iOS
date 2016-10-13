@@ -14,6 +14,7 @@ import DZNEmptyDataSet
 import MBProgressHUD
 import Fabric
 import Crashlytics
+import KINWebBrowser
 
 class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
@@ -79,12 +80,42 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
             print("Cancelled")
         })
         
+        let privacyPolicy = UIAlertAction(title: "Terms of Service", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://www.scenariapp.com/terms/")!)
+
+            
+           /* let webBroswer = KINWebBrowserViewController()
+            self.navigationController?.pushViewController(webBroswer, animated: true)
+            webBroswer.loadURLString("http://www.scenariapp.com/terms/")  // USA Voting How to Page*/
+
+      })
         
+        let eula = UIAlertAction(title: "Privacy Policy", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://www.scenariapp.com/privacy/")!)
+
+            /*
+            let webBroswer = KINWebBrowserViewController()
+            self.navigationController?.pushViewController(webBroswer, animated: true)
+            webBroswer.loadURLString("http://www.scenariapp.com/privacy/")  // USA Voting How to Page*/
+            
+        })
+        
+        
+        
+
         // 4
         optionMenu.addAction(shareProfile)
         optionMenu.addAction(uploadCamera)
+        optionMenu.addAction(privacyPolicy)
+        optionMenu.addAction(eula)
         optionMenu.addAction(logoutAction)
         optionMenu.addAction(cancelAction)
+        
+  
         
         // 5
         self.presentViewController(optionMenu, animated: true, completion: nil)

@@ -20,6 +20,9 @@ pod 'Fusuma', '~>0.5'
 pod 'SDCSegmentedViewController'
 #pod 'SwiftDateTools'
 pod 'LaunchKit'
+pod 'KINWebBrowser'
+
+
 
 
 end

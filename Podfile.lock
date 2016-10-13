@@ -1,4 +1,5 @@
 PODS:
+  - ARChromeActivity (1.0.5)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -15,6 +16,9 @@ PODS:
   - Facebook-iOS-SDK (3.24.4):
     - Bolts (~> 1.2)
   - Fusuma (0.5.3)
+  - KINWebBrowser (1.3.2):
+    - ARChromeActivity (= 1.0.5)
+    - TUSafariActivity (= 1.0.4)
   - LaunchKit (2.1.4):
     - LaunchKit/LaunchKit (= 2.1.4)
   - LaunchKit/LaunchKit (2.1.4)
@@ -29,6 +33,7 @@ PODS:
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
   - SDCSegmentedViewController (1.6)
+  - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
@@ -36,6 +41,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Fabric
   - Fusuma (~> 0.5)
+  - KINWebBrowser
   - LaunchKit
   - MBProgressHUD
   - Parse
@@ -44,6 +50,7 @@ DEPENDENCIES:
   - SDCSegmentedViewController
 
 SPEC CHECKSUMS:
+  ARChromeActivity: 821c7849b566f49583987468733a896fee35aa4d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
@@ -51,13 +58,15 @@ SPEC CHECKSUMS:
   Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   Fusuma: 02ffb3a9943792519f2c0972263b750acb550a49
+  KINWebBrowser: 27aa857a2aa39063ed102cca781d130b679d205f
   LaunchKit: 95ad4fb171a0f8ea1c80aa26d4fb7bd637788f9c
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseFacebookUtils: 7030f53c989fda36ad50029d90edec1327424317
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-PODFILE CHECKSUM: 571698c5d4b0473d69c9d30377f5fb35dadef061
+PODFILE CHECKSUM: d7663ccd5bb47f2001c47949439858c01aaeaf09
 
 COCOAPODS: 1.1.0.rc.2
