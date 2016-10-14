@@ -54,6 +54,12 @@
 		D1DDAE831D08DFA200B77376 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDAE7E1D08DFA200B77376 /* FBSDKLoginKit.framework */; };
 		D1DDAE841D08DFA200B77376 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDAE7F1D08DFA200B77376 /* FBSDKMessengerShareKit.framework */; };
 		D1DDAE851D08DFA200B77376 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDAE801D08DFA200B77376 /* FBSDKShareKit.framework */; };
+		D1FFFBC21DB0297200A65729 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E40B1DA2DF0F009269BE /* Messages.framework */; };
+		D1FFFBC51DB0297200A65729 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFFBC41DB0297200A65729 /* MessagesViewController.swift */; };
+		D1FFFBC81DB0297200A65729 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FFFBC61DB0297200A65729 /* MainInterface.storyboard */; };
+		D1FFFBCA1DB0297200A65729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FFFBC91DB0297200A65729 /* Assets.xcassets */; };
+		D1FFFBCE1DB0297200A65729 /* Scenari Messenger.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1FFFBC11DB0297200A65729 /* Scenari Messenger.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D1FFFBD21DB041AB00A65729 /* Scenari_Login_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */; };
 		E03C484EB5A73BB52FD4900C /* Pods_ScenariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +78,38 @@
 			remoteGlobalIDString = D1CECAFC1CD3E37E0006809A;
 			remoteInfo = Scenari;
 		};
+		D1FFFBCC1DB0297200A65729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1CECAF51CD3E37E0006809A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1FFFBC01DB0297200A65729;
+			remoteInfo = "Scenari Messenger";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D1FFFBA61DB0269B00A65729 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1FFFBBC1DB0271900A65729 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1FFFBCE1DB0297200A65729 /* Scenari Messenger.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scenari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +170,11 @@
 		D1DDAE7E1D08DFA200B77376 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D1DDAE7F1D08DFA200B77376 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		D1DDAE801D08DFA200B77376 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		D1FFFBC11DB0297200A65729 /* Scenari Messenger.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Scenari Messenger.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1FFFBC41DB0297200A65729 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		D1FFFBC71DB0297200A65729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D1FFFBC91DB0297200A65729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1FFFBCB1DB0297200A65729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FFBA0DF19AA48BDDA8EEAE /* Pods-ScenariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDFC1188BCEC52EBB225668A /* Pods-ScenariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +220,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E48082498D752CEC7165ED /* Pods_ScenariUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1FFFBBE1DB0297200A65729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FFFBC21DB0297200A65729 /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +350,7 @@
 				D1CECAFF1CD3E37E0006809A /* Scenari */,
 				D1CECB171CD3E37E0006809A /* ScenariTests */,
 				D1CECB221CD3E37E0006809A /* ScenariUITests */,
+				D1FFFBC31DB0297200A65729 /* Scenari Messenger */,
 				D1CECAFE1CD3E37E0006809A /* Products */,
 				50CF6B11FB7CDBDBC21B7B09 /* Pods */,
 				371B45AEA17A87D8FD11F28B /* Frameworks */,
@@ -312,6 +363,7 @@
 				D1CECAFD1CD3E37E0006809A /* Scenari.app */,
 				D1CECB141CD3E37E0006809A /* ScenariTests.xctest */,
 				D1CECB1F1CD3E37E0006809A /* ScenariUITests.xctest */,
+				D1FFFBC11DB0297200A65729 /* Scenari Messenger.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +407,17 @@
 			path = ScenariUITests;
 			sourceTree = "<group>";
 		};
+		D1FFFBC31DB0297200A65729 /* Scenari Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				D1FFFBC41DB0297200A65729 /* MessagesViewController.swift */,
+				D1FFFBC61DB0297200A65729 /* MainInterface.storyboard */,
+				D1FFFBC91DB0297200A65729 /* Assets.xcassets */,
+				D1FFFBCB1DB0297200A65729 /* Info.plist */,
+			);
+			path = "Scenari Messenger";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -372,10 +435,13 @@
 				D19A31281CFA54190038CEFF /* ShellScript */,
 				0FE19840D66DE1FEA27F7DF0 /* 📦 Embed Pods Frameworks */,
 				9579D1A7E9D5ED4E510635D4 /* 📦 Copy Pods Resources */,
+				D1FFFBA61DB0269B00A65729 /* Embed Watch Content */,
+				D1FFFBBC1DB0271900A65729 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D1FFFBCD1DB0297200A65729 /* PBXTargetDependency */,
 			);
 			name = Scenari;
 			productName = Scenari;
@@ -429,13 +495,30 @@
 			productReference = D1CECB1F1CD3E37E0006809A /* ScenariUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D1FFFBC01DB0297200A65729 /* Scenari Messenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1FFFBCF1DB0297200A65729 /* Build configuration list for PBXNativeTarget "Scenari Messenger" */;
+			buildPhases = (
+				D1FFFBBD1DB0297200A65729 /* Sources */,
+				D1FFFBBE1DB0297200A65729 /* Frameworks */,
+				D1FFFBBF1DB0297200A65729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Scenari Messenger";
+			productName = "Scenari Messenger";
+			productReference = D1FFFBC11DB0297200A65729 /* Scenari Messenger.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D1CECAF51CD3E37E0006809A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Brown Box Works";
 				TargetAttributes = {
@@ -457,6 +540,11 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = D1CECAFC1CD3E37E0006809A;
 					};
+					D1FFFBC01DB0297200A65729 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = L6WD86F9N5;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = D1CECAF81CD3E37E0006809A /* Build configuration list for PBXProject "Scenari" */;
@@ -475,6 +563,7 @@
 				D1CECAFC1CD3E37E0006809A /* Scenari */,
 				D1CECB131CD3E37E0006809A /* ScenariTests */,
 				D1CECB1E1CD3E37E0006809A /* ScenariUITests */,
+				D1FFFBC01DB0297200A65729 /* Scenari Messenger */,
 			);
 		};
 /* End PBXProject section */
@@ -506,6 +595,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1FFFBBF1DB0297200A65729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FFFBCA1DB0297200A65729 /* Assets.xcassets in Resources */,
+				D1FFFBC81DB0297200A65729 /* MainInterface.storyboard in Resources */,
+				D1FFFBD21DB041AB00A65729 /* Scenari_Login_Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +922,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1FFFBBD1DB0297200A65729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FFFBC51DB0297200A65729 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -835,6 +942,11 @@
 			isa = PBXTargetDependency;
 			target = D1CECAFC1CD3E37E0006809A /* Scenari */;
 			targetProxy = D1CECB201CD3E37E0006809A /* PBXContainerItemProxy */;
+		};
+		D1FFFBCD1DB0297200A65729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1FFFBC01DB0297200A65729 /* Scenari Messenger */;
+			targetProxy = D1FFFBCC1DB0297200A65729 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -853,6 +965,14 @@
 				D1CECB0D1CD3E37E0006809A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D1FFFBC61DB0297200A65729 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1FFFBC71DB0297200A65729 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1091,6 +1211,55 @@
 			};
 			name = Release;
 		};
+		D1FFFBD01DB0297200A65729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Everette Scolum (M67W4TFXJ5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = L6WD86F9N5;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				INFOPLIST_FILE = "Scenari Messenger/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lbbw.Scenari.Scenari-Messenger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1FFFBD11DB0297200A65729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = L6WD86F9N5;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				INFOPLIST_FILE = "Scenari Messenger/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lbbw.Scenari.Scenari-Messenger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1129,6 +1298,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D1FFFBCF1DB0297200A65729 /* Build configuration list for PBXNativeTarget "Scenari Messenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1FFFBD01DB0297200A65729 /* Debug */,
+				D1FFFBD11DB0297200A65729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

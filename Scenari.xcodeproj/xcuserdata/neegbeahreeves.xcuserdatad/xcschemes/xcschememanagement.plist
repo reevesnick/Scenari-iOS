@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Scenari Messenger.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 		<key>Scenari.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>ScenariWatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>ScenariWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +38,21 @@
 			<true/>
 		</dict>
 		<key>D1CECB1E1CD3E37E0006809A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1FFFB7F1DB0269B00A65729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1FFFBAA1DB0271900A65729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1FFFBC01DB0297200A65729</key>
 		<dict>
 			<key>primary</key>
 			<true/>
