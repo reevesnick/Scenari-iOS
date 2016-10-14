@@ -9,6 +9,15 @@
 import UIKit
 import Messages
 
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+}
 
 class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     
@@ -16,6 +25,8 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     @IBOutlet var characterCount: UILabel!
     @IBOutlet var questionPreivew: UILabel!
     @IBOutlet var imageViewLayout: UIView!
+    @IBOutlet var scenariLogo: UIImageView!
+    @IBOutlet var sloganLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +41,7 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     }
     
     @IBAction func generateButton(_:AnyObject){
-        var str = inputQuestion.text
+        let str = inputQuestion.text
         questionPreivew!.text = "\(str!)";
 
     
@@ -39,30 +50,80 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     }
     
     func createImageForMessage() -> UIImage? {
-        let background = imageViewLayout
-        imageViewLayout.frame =  CGRect(x: 100, y: 100, width: 128, height: 128)
+       let str = inputQuestion.text
         
-       // UIGraphicsBeginImageContextWithOptions(background.frame.size, false, UIScreen.main().scale)
-        //background.drawHierarchy(in: background.bounds, afterScreenUpdates: true)
+        //let background = imageViewLayout
+        
+        
+
+        
+        let background = UIView(frame: CGRect(x: 5, y: 0, width: 300, height: 300))
+        background.backgroundColor = UIColor(red: 82, green: 167, blue: 223)
+        /*
+        let label = UILabel(frame: CGRect(x: 75, y: 75, width: 150, height: 150))
+        label.font = UIFont.init(name: "Avenir", size: 17.5)
+        label.backgroundColor = UIColor.blueColor()
+        label.textColor = UIColor.whiteColor()
+        label.text = "\(str!)"
+        label.layer.cornerRadius = label.frame.size.width/2.0
+        label.clipsToBounds = true
+        */
+        
+        questionPreivew = UILabel(frame: CGRect(x: 0, y: 65, width: 289, height: 115))
+        questionPreivew.font = UIFont.init(name: "Avenir", size: 22)
+        questionPreivew.textColor = UIColor.whiteColor()
+        questionPreivew.text = "\(str!)"
+        questionPreivew.numberOfLines = 0
+  
+        questionPreivew.clipsToBounds = true
+        
+        scenariLogo = UIImageView(frame: CGRect(x:190, y:235, width: 98, height: 43))
+        let imagePlace = UIImage(named: "Scenari_Login_Logo.png");
+        scenariLogo.image = imagePlace
+        
+        sloganLabel = UILabel(frame: CGRect(x:195, y:260, width: 98, height: 43))
+        sloganLabel.font = UIFont.init(name: "Avenir Book", size: 11)
+        sloganLabel.textColor = UIColor.whiteColor()
+        sloganLabel.text = "What will you do?"
+        //sloganLabel.layer.cornerRadius = sloganLabel.frame.size.width/2.0
+        sloganLabel.clipsToBounds = true
+        
+        
+        background.addSubview(questionPreivew!)
+        background.addSubview(scenariLogo!)
+        background.addSubview(sloganLabel!)
+        
+        background.frame.origin = CGPoint(x: view.frame.size.width, y: view.frame.size.height)
+        view.addSubview(background)
+        
+        
+        UIGraphicsBeginImageContextWithOptions(background.frame.size, false, UIScreen.mainScreen().scale)
+        background.drawViewHierarchyInRect(background.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        //background.removeFromSuperview()
+        
+        background.removeFromSuperview()
+        
         
         return image
     }
     @IBAction func sendButton(_: AnyObject){
-        if let image = createImageForMessage(), let conversation = activeConversation {
+       if let image = createImageForMessage(), let conversation = activeConversation {
             let layout = MSMessageTemplateLayout()
             layout.image = image
             layout.caption = "Created via Scenari"
             
             let message = MSMessage()
             message.layout = layout
-           // message.url = URL(string: "emptyURL")
+            message.URL = NSURL(string: "emptyURL")
+
+        
+        
           
-            conversation.insert(message, completionHandler: { (error: NSError?) in
-                print(error)
-            })
+        conversation.insertMessage(message, completionHandler: { (error: NSError?) in
+            print(error)
+        
+        })
         }
     }
     
