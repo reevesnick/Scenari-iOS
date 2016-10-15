@@ -33,6 +33,8 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         //questionPreivew.text = "\(inputQuestion.text!)";
         questionPreivew.text = "Write a scenario."
+        self.characterCount.text = "140"
+        self.inputQuestion.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,6 +51,8 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         
     }
     
+    // Set UIView as iMessage image
+    
     func createImageForMessage() -> UIImage? {
        let str = inputQuestion.text
         
@@ -59,17 +63,11 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         
         let background = UIView(frame: CGRect(x: 5, y: 0, width: 300, height: 300))
         background.backgroundColor = UIColor(red: 82, green: 167, blue: 223)
-        /*
-        let label = UILabel(frame: CGRect(x: 75, y: 75, width: 150, height: 150))
-        label.font = UIFont.init(name: "Avenir", size: 17.5)
-        label.backgroundColor = UIColor.blueColor()
-        label.textColor = UIColor.whiteColor()
-        label.text = "\(str!)"
-        label.layer.cornerRadius = label.frame.size.width/2.0
-        label.clipsToBounds = true
-        */
         
-        questionPreivew = UILabel(frame: CGRect(x: 0, y: 65, width: 289, height: 115))
+        
+ 
+        // Layout Message for Question
+        questionPreivew = UILabel(frame: CGRect(x: 5, y: 30, width: 289, height: 185))
         questionPreivew.font = UIFont.init(name: "Avenir", size: 22)
         questionPreivew.textColor = UIColor.whiteColor()
         questionPreivew.text = "\(str!)"
@@ -85,7 +83,6 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         sloganLabel.font = UIFont.init(name: "Avenir Book", size: 11)
         sloganLabel.textColor = UIColor.whiteColor()
         sloganLabel.text = "What will you do?"
-        //sloganLabel.layer.cornerRadius = sloganLabel.frame.size.width/2.0
         sloganLabel.clipsToBounds = true
         
         
@@ -136,6 +133,17 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         return true
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (inputQuestion.text!.utf16.count) + (string.utf16.count) - range.length
+        if(newLength <= 130){
+            self.characterCount.text = "\(130 - newLength)"
+            return true
+        }else{
+            return false
+        }
+    }
+
+    
     // MARK: - Conversation Handling
     
      func willBecomeActive(with conversation: MSConversation) {
@@ -183,5 +191,6 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+
 
 }

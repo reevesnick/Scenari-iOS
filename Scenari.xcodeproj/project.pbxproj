@@ -15,6 +15,8 @@
 		D11B0EE51D00F86200F42943 /* RecentScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE21D00F86200F42943 /* RecentScenarioTableViewController.swift */; };
 		D127FE011D10E20800330ED5 /* Search-EmptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */; };
 		D127FE021D10E20800330ED5 /* Timeline-EmptyView.png in Resources */ = {isa = PBXBuildFile; fileRef = D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */; };
+		D138E1581DB19A6300486640 /* Scenari_Login_Logo_Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D138E1571DB19A6300486640 /* Scenari_Login_Logo_Blue.png */; };
+		D138E1591DB19A7600486640 /* Scenari_Login_Logo_Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D138E1571DB19A6300486640 /* Scenari_Login_Logo_Blue.png */; };
 		D16151B11D0242EF006CCC22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16151B01D0242EF006CCC22 /* LoginView.swift */; };
 		D167E4081DA2DEF6009269BE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E4071DA2DEF6009269BE /* MessageUI.framework */; };
 		D167E40A1DA2DF06009269BE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E4091DA2DF06009269BE /* AdSupport.framework */; };
@@ -125,6 +127,7 @@
 		D11C970F1CF7061E00C1E2BD /* Scenari-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scenari-Bridging-Header.h"; sourceTree = "<group>"; };
 		D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Search-EmptyView.png"; path = "Empty View/Search-EmptyView.png"; sourceTree = "<group>"; };
 		D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Timeline-EmptyView.png"; path = "Empty View/Timeline-EmptyView.png"; sourceTree = "<group>"; };
+		D138E1571DB19A6300486640 /* Scenari_Login_Logo_Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scenari_Login_Logo_Blue.png; sourceTree = "<group>"; };
 		D16151B01D0242EF006CCC22 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D167E4071DA2DEF6009269BE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D167E4091DA2DF06009269BE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -292,6 +295,7 @@
 		D183364D1D03938F005CDCF7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D138E1571DB19A6300486640 /* Scenari_Login_Logo_Blue.png */,
 				D127FDFF1D10E20800330ED5 /* Search-EmptyView.png */,
 				D127FE001D10E20800330ED5 /* Timeline-EmptyView.png */,
 				D183364B1D039160005CDCF7 /* akaDora.ttf */,
@@ -577,6 +581,7 @@
 				D183364A1D0271FD005CDCF7 /* CreateScenario.storyboard in Resources */,
 				D127FE011D10E20800330ED5 /* Search-EmptyView.png in Resources */,
 				D1CECB0E1CD3E37E0006809A /* LaunchScreen.storyboard in Resources */,
+				D138E1581DB19A6300486640 /* Scenari_Login_Logo_Blue.png in Resources */,
 				D1CECB0B1CD3E37E0006809A /* Assets.xcassets in Resources */,
 				D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */,
 				D1CECB061CD3E37E0006809A /* Main.storyboard in Resources */,
@@ -604,6 +609,7 @@
 			files = (
 				D1FFFBCA1DB0297200A65729 /* Assets.xcassets in Resources */,
 				D1FFFBC81DB0297200A65729 /* MainInterface.storyboard in Resources */,
+				D138E1591DB19A7600486640 /* Scenari_Login_Logo_Blue.png in Resources */,
 				D1FFFBD21DB041AB00A65729 /* Scenari_Login_Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1306,6 +1312,7 @@
 				D1FFFBD11DB0297200A65729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
