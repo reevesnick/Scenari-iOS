@@ -46,6 +46,7 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         let str = inputQuestion.text
         questionPreivew!.text = "\(str!)";
 
+        
     
         
         
@@ -104,28 +105,34 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         
         return image
     }
+    
     @IBAction func sendButton(_: AnyObject){
+        let str = inputQuestion.text
+
        if let image = createImageForMessage(), let conversation = activeConversation {
             let layout = MSMessageTemplateLayout()
             layout.image = image
-            layout.caption = "Created via Scenari"
+            layout.caption = "\(str!). Created via Scenari"
             
             let message = MSMessage()
             message.layout = layout
             message.URL = NSURL(string: "emptyURL")
 
+
+            conversation.insertMessage(message, completionHandler: { (error: NSError?) in
+                print(error)
         
-        
-          
-        conversation.insertMessage(message, completionHandler: { (error: NSError?) in
-            print(error)
-        
-        })
+            })
         }
+        requestPresentationStyle(.Compact)
+
     }
     
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        requestPresentationStyle(.Expanded)
+
+        
        // let stringplace: String = inputQuestion.text!;
         questionPreivew.text = "\(inputQuestion.text!)";
         inputQuestion.resignFirstResponder()
@@ -135,6 +142,7 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let newLength = (inputQuestion.text!.utf16.count) + (string.utf16.count) - range.length
+       
         if(newLength <= 130){
             self.characterCount.text = "\(130 - newLength)"
             return true
