@@ -29,9 +29,7 @@ class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, 
     
     var HUD:MBProgressHUD?
 
-   
-    
-    
+        
     @IBAction func settingsButton(sender: UIButton){
         
         // 1
