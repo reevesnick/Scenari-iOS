@@ -14,7 +14,7 @@ import DZNEmptyDataSet
 import MBProgressHUD
 import Fabric
 import Crashlytics
-import KINWebBrowser
+//import KINWebBrowser
 
 class ProfileViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     

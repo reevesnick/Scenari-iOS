@@ -4,6 +4,8 @@
 
 use_frameworks!
 
+
+# Main Target App
 target 'Scenari' do
     
 pod 'Parse'
@@ -23,7 +25,6 @@ pod 'LaunchKit'
 pod 'KINWebBrowser'
 
 
-
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
@@ -34,6 +35,12 @@ end
 
 
 
+end
+
+
+# iMessage Extension
+target 'Scenari Messenger' do
+    
 end
 
 

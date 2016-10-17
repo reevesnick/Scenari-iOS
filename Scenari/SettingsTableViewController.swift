@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KINWebBrowser
 
 class SettingsTableViewController: UITableViewController {
 
@@ -20,7 +19,7 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
+    /*
     @IBAction func privacyButton(_:AnyObject){
         let webBroswer = KINWebBrowserViewController()
         self.navigationController?.pushViewController(webBroswer, animated: true)
@@ -40,7 +39,7 @@ class SettingsTableViewController: UITableViewController {
         self.presentViewController(initialSettingsVC!, animated: false, completion:nil)
 
     }
-
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

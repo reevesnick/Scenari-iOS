@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3BE2C7B756F310C1F64F85 /* Pods_Scenari_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6B381EF2E7C36A033C8F6F /* Pods_Scenari_Messenger.framework */; };
 		57F7F4BBF1EBA5F1EF94B040 /* Pods_Scenari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */; };
 		93E48082498D752CEC7165ED /* Pods_ScenariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */; };
 		D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0ED41CFE60C600F42943 /* ProfileCell.swift */; };
@@ -116,9 +117,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		004F1017EEA3149FA5AD77F8 /* Pods-Scenari Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari Messenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari Messenger/Pods-Scenari Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scenari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF5193532CAEBA8CDCCCBB /* Pods-Scenari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari/Pods-Scenari.release.xcconfig"; sourceTree = "<group>"; };
 		28EE3581EEBFFC74B5E814B3 /* Pods-Scenari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari/Pods-Scenari.debug.xcconfig"; sourceTree = "<group>"; };
+		4D6B381EF2E7C36A033C8F6F /* Pods_Scenari_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scenari_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A24C0280D6EEBF0A5A8FBE9 /* Pods-ScenariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 		D1FFFBC71DB0297200A65729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D1FFFBC91DB0297200A65729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1FFFBCB1DB0297200A65729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D34990E79B671A9342CA5B4F /* Pods-Scenari Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari Messenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari Messenger/Pods-Scenari Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FFBA0DF19AA48BDDA8EEAE /* Pods-ScenariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDFC1188BCEC52EBB225668A /* Pods-ScenariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1FFFBC21DB0297200A65729 /* Messages.framework in Frameworks */,
+				0A3BE2C7B756F310C1F64F85 /* Pods_Scenari_Messenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +265,7 @@
 				0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */,
 				9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */,
 				ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */,
+				4D6B381EF2E7C36A033C8F6F /* Pods_Scenari_Messenger.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				F3FFBA0DF19AA48BDDA8EEAE /* Pods-ScenariTests.release.xcconfig */,
 				6A24C0280D6EEBF0A5A8FBE9 /* Pods-ScenariUITests.debug.xcconfig */,
 				B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */,
+				004F1017EEA3149FA5AD77F8 /* Pods-Scenari Messenger.debug.xcconfig */,
+				D34990E79B671A9342CA5B4F /* Pods-Scenari Messenger.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -517,9 +525,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1FFFBCF1DB0297200A65729 /* Build configuration list for PBXNativeTarget "Scenari Messenger" */;
 			buildPhases = (
+				09D7D5425994AE8A0A511170 /* [CP] Check Pods Manifest.lock */,
 				D1FFFBBD1DB0297200A65729 /* Sources */,
 				D1FFFBBE1DB0297200A65729 /* Frameworks */,
 				D1FFFBBF1DB0297200A65729 /* Resources */,
+				D1DCB97E1DB55D4400CE4E3F /* ShellScript */,
+				424905111384FC964B844B62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -662,6 +673,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scenari/Pods-Scenari-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		09D7D5425994AE8A0A511170 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		0FE19840D66DE1FEA27F7DF0 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,6 +731,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		424905111384FC964B844B62 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scenari Messenger/Pods-Scenari Messenger-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5627DB37862EFD563D21E4C0 /* [CP] Copy Pods Resources */ = {
@@ -854,6 +895,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8e03bf8519f7903a4e20ae17146a26bdb3d4774a fba0856ddf32bb0d729da59586194444a0b76228015168b2190abef98e9907b1";
+		};
+		D1DCB97E1DB55D4400CE4E3F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "EMBEDDED_EXTENSION_PLUGIN_PATH=\"$TARGET_BUILD_DIR/$PLUGINS_FOLDER_PATH/<HARD_CODE_EXTENSION.appex_HERE>/Frameworks\"\nif [[ -d \"$EMBEDDED_EXTENSION_PLUGIN_PATH\" ]]; then\nrm -fr \"$EMBEDDED_EXTENSION_PLUGIN_PATH\"\nfi";
 		};
 		E89000149F6A3E18F3EF4A63 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1100,6 +1154,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Everette Scolum (M67W4TFXJ5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1127,7 +1182,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
 				);
 				INFOPLIST_FILE = Scenari/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1145,6 +1200,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1173,7 +1229,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
 				);
 				INFOPLIST_FILE = Scenari/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1235,14 +1291,17 @@
 		};
 		D1FFFBD01DB0297200A65729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 004F1017EEA3149FA5AD77F8 /* Pods-Scenari Messenger.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Everette Scolum (M67W4TFXJ5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L6WD86F9N5;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Scenari Messenger/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1260,14 +1319,17 @@
 		};
 		D1FFFBD11DB0297200A65729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D34990E79B671A9342CA5B4F /* Pods-Scenari Messenger.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L6WD86F9N5;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = "Scenari Messenger/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

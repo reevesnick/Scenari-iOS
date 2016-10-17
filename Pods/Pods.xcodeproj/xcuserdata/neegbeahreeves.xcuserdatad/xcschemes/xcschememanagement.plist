@@ -69,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Scenari Messenger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Scenari.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -163,6 +168,11 @@
 			<true/>
 		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4189725F5B8A26AE2B9E0459A593BF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
