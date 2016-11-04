@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ParseTwitterUtils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ParseUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -122,6 +127,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>124BA04F2E4A4F5C8CDAA39DB6C7F903</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
@@ -138,11 +148,6 @@
 			<true/>
 		</dict>
 		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E9F3802A3A79767DA22ADCCCE9BCF2F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,12 +187,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB20398F3B7FFB2F30BFE03F0509254A</key>
+		<key>CBBAC4E0146B4FD186B0026F84E671C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBBAC4E0146B4FD186B0026F84E671C2</key>
+		<key>CF659FDCA14C7899ED54379ED4002D9C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -203,6 +208,11 @@
 			<true/>
 		</dict>
 		<key>E1F78B1C5F8F2CCD0E68552EAF2B9B52</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F500ABE386E129C681A4D8E1D5BB1D67</key>
 		<dict>
 			<key>primary</key>
 			<true/>

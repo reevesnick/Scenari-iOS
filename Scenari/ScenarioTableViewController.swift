@@ -12,6 +12,7 @@ import ParseUI
 import MBProgressHUD
 import DZNEmptyDataSet
 import ParseFacebookUtils
+import ParseTwitterUtils
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Fabric
@@ -67,7 +68,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                                           PFLogInFields.LogInButton,
                                           PFLogInFields.SignUpButton,
                                           PFLogInFields.PasswordForgotten,
-                                          PFLogInFields.Facebook]
+                                          PFLogInFields.Facebook,
+                                          PFLogInFields.Twitter]
             
             loginViewController.facebookPermissions = ["public_profile","email","user_friends"]
 
@@ -427,7 +429,24 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        
+
+        
+        PFTwitterUtils.logInWithBlock {
+            (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in with Twitter!")
+                } else {
+                    print("User logged in with Twitter!")
+                }
+            } else {
+                print("Uh oh. The user cancelled the Twitter login.")
+            }
+        }
       
+        
+        // Facebook Login Condition
         PFFacebookUtils.logInWithPermissions(permissions, block: {
             (user: PFUser?, error: NSError?) -> Void in
             //switched ! to ?

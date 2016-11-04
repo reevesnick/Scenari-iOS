@@ -58,8 +58,8 @@ class LoginView: PFLogInViewController {
         logInView?.logInButton?.backgroundColor = UIColor(red: 52/255, green: 191/255, blue: 73/255, alpha: 1)
         
         // make the buttons classier
-       customizeButton(logInView?.facebookButton!)
-        //customizeButton(logInView?.twitterButton!)
+        customizeButton(logInView?.facebookButton!)
+        customizeButton(logInView?.twitterButton!)
         customizeButton(logInView?.signUpButton!)
         //customizeButton(logInView?.logInButton!)
         //customizeButton(logInView?.passwordForgottenButton!)

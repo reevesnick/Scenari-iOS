@@ -10,12 +10,14 @@ import UIKit
 import CoreData
 import Parse
 import Fabric
+import TwitterKit
 import Crashlytics
 import ChameleonFramework
 import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
 import ParseFacebookUtils
+import ParseTwitterUtils
 import LaunchKit
 
 @UIApplicationMain
@@ -42,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         //Fabric SDK
-        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self, Twitter.self])
                
         //Parse Server API Key
         let configuration = ParseClientConfiguration {
@@ -54,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Parse Facebook Utils
         PFFacebookUtils.initializeFacebook()
+        
+        // Parse Twitter Utils
+        PFTwitterUtils.initializeWithConsumerKey("9fbKCalsCTB8MmEqrQqE6FdBs", consumerSecret:"4EvABWtloVngK9rzYYkd4id61Uus8n8DdpsDJR6RSyfE0mWKLD")
         
         //Parse Push
 
