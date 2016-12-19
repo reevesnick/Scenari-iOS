@@ -68,8 +68,8 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
                                           PFLogInFields.LogInButton,
                                           PFLogInFields.SignUpButton,
                                           PFLogInFields.PasswordForgotten,
-                                          PFLogInFields.Facebook,
-                                          PFLogInFields.Twitter]
+                                          PFLogInFields.Facebook
+                                          /*PFLogInFields.Twitter*/] //Twitter Login Taken Off Till futher notice 
             
             loginViewController.facebookPermissions = ["public_profile","email","user_friends"]
 
@@ -436,6 +436,13 @@ class ScenarioTableViewController: PFQueryTableViewController, PFLogInViewContro
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
+                    let twitterUsername = PFTwitterUtils.twitter()?.screenName
+                    //let twitterEmail = PFTwitterUtils.twitter()?.
+
+                    
+                    PFUser.currentUser()!.setValue(twitterUsername, forKey: "username")
+                    //PFUser.currentUser()!.sa
+                    ///PFUser.currentUser()!.setValue(email, forKey: "email")
                     print("User signed up and logged in with Twitter!")
                 } else {
                     print("User logged in with Twitter!")

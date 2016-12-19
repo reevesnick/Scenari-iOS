@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4Du-07-3s8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4Du-07-3s8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,21 +18,43 @@
                         <viewControllerLayoutGuide type="bottom" id="mfW-Cy-sMP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oYz-IL-U9d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Answer A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgW-me-NJQ">
-                                <frame key="frameInset" minX="16" minY="269" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Answer A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgW-me-NJQ">
+                                <rect key="frame" x="16" y="269" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Answer B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-sF-bDt">
-                                <frame key="frameInset" minX="16" minY="348" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Answer B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-sF-bDt">
+                                <rect key="frame" x="16" y="348" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-cr-tiQ">
-                                <frame key="frameInset" minX="12" minY="112" height="102"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY2-sq-4NB">
+                                <rect key="frame" x="12" y="518" width="347" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Post Scenario">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButton:" destination="4fe-iK-7EZ" eventType="touchUpInside" id="ubX-or-n6U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create your scenario below..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gS-qL-ExC">
+                                <rect key="frame" x="12" y="83" width="347" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-cr-tiQ">
+                                <rect key="frame" x="12" y="142" width="347" height="102"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -43,43 +67,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY2-sq-4NB">
-                                <frame key="frameInset" minX="12" minY="518" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <state key="normal" title="Post Scenario">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadButton:" destination="4fe-iK-7EZ" eventType="touchUpInside" id="ubX-or-n6U"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create your scenario below..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gS-qL-ExC">
-                                <frame key="frameInset" minX="12" minY="83" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="6gS-qL-ExC" secondAttribute="trailing" id="4K1-eg-cBE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uue-cr-tiQ" secondAttribute="trailing" id="4ns-t1-AbJ"/>
-                            <constraint firstItem="Uue-cr-tiQ" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-4" id="9i6-1h-Abc"/>
-                            <constraint firstItem="6gS-qL-ExC" firstAttribute="top" secondItem="WU9-p3-Hdk" secondAttribute="bottom" constant="19" id="EVZ-mK-NB6"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="DgW-me-NJQ" secondAttribute="leading" id="K4w-Wz-vic"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="5iI-sF-bDt" secondAttribute="leading" id="KTl-sf-YyI"/>
-                            <constraint firstItem="Uue-cr-tiQ" firstAttribute="top" secondItem="6gS-qL-ExC" secondAttribute="bottom" constant="8" id="Knv-LR-Nhx"/>
-                            <constraint firstItem="FY2-sq-4NB" firstAttribute="top" secondItem="5iI-sF-bDt" secondAttribute="bottom" constant="140" id="MgC-SU-dlr"/>
-                            <constraint firstItem="DgW-me-NJQ" firstAttribute="top" secondItem="Uue-cr-tiQ" secondAttribute="bottom" constant="55" id="SLv-Of-rRc"/>
-                            <constraint firstItem="FY2-sq-4NB" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-4" id="bGp-po-69m"/>
-                            <constraint firstItem="mfW-Cy-sMP" firstAttribute="top" secondItem="FY2-sq-4NB" secondAttribute="bottom" constant="119" id="de5-S4-n4Q"/>
-                            <constraint firstItem="Uue-cr-tiQ" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-4" id="g8y-1f-Ta2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5iI-sF-bDt" secondAttribute="trailing" id="mG3-pc-Lyd"/>
-                            <constraint firstItem="5iI-sF-bDt" firstAttribute="top" secondItem="DgW-me-NJQ" secondAttribute="bottom" constant="49" id="sdF-8w-amn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FY2-sq-4NB" secondAttribute="trailing" id="szz-aw-vxk"/>
-                            <constraint firstItem="6gS-qL-ExC" firstAttribute="leading" secondItem="oYz-IL-U9d" secondAttribute="leadingMargin" constant="-4" id="zAe-qD-Lnh"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Scenario" id="CFJ-HO-PZZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="TCq-8l-FJd">
@@ -120,6 +109,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

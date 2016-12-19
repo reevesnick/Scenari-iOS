@@ -59,7 +59,7 @@ class LoginView: PFLogInViewController {
         
         // make the buttons classier
         customizeButton(logInView?.facebookButton!)
-        customizeButton(logInView?.twitterButton!)
+        //customizeButton(logInView?.twitterButton!)
         customizeButton(logInView?.signUpButton!)
         //customizeButton(logInView?.logInButton!)
         //customizeButton(logInView?.passwordForgottenButton!)

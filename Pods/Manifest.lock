@@ -37,10 +37,10 @@ PODS:
     - Parse (~> 1.9)
   - SDCSegmentedViewController (1.6)
   - TUSafariActivity (1.0.4)
-  - TwitterCore (2.5.0):
+  - TwitterCore (2.7.0):
     - Fabric
-  - TwitterKit (2.5.0):
-    - TwitterCore (= 2.5.0)
+  - TwitterKit (2.7.0):
+    - TwitterCore (= 2.7.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
@@ -77,9 +77,9 @@ SPEC CHECKSUMS:
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  TwitterCore: 95c46af93112768a7983bd370d66023553601d01
-  TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
+  TwitterCore: fbdbeaf6d2d20cf7c7aa4136fe5173c1c85df2e2
+  TwitterKit: 97e729ceea041d174126235bf6ff67dcf37772d4
 
 PODFILE CHECKSUM: 70055d71f2e092fe8caba13c8b1ddc2d419579b7
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1
