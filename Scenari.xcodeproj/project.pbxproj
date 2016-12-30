@@ -66,6 +66,7 @@
 		D1DDAE831D08DFA200B77376 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDAE7E1D08DFA200B77376 /* FBSDKLoginKit.framework */; };
 		D1DDAE841D08DFA200B77376 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDAE7F1D08DFA200B77376 /* FBSDKMessengerShareKit.framework */; };
 		D1DDAE851D08DFA200B77376 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDAE801D08DFA200B77376 /* FBSDKShareKit.framework */; };
+		D1F439141E16A0DE00A53C86 /* WatchRecentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F439131E16A0DE00A53C86 /* WatchRecentTableView.swift */; };
 		D1FFFBC21DB0297200A65729 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167E40B1DA2DF0F009269BE /* Messages.framework */; };
 		D1FFFBC51DB0297200A65729 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFFBC41DB0297200A65729 /* MessagesViewController.swift */; };
 		D1FFFBC81DB0297200A65729 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FFFBC61DB0297200A65729 /* MainInterface.storyboard */; };
@@ -224,6 +225,7 @@
 		D1DDAE7E1D08DFA200B77376 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D1DDAE7F1D08DFA200B77376 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		D1DDAE801D08DFA200B77376 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		D1F439131E16A0DE00A53C86 /* WatchRecentTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchRecentTableView.swift; sourceTree = "<group>"; };
 		D1FFFBC11DB0297200A65729 /* Scenari Messenger.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Scenari Messenger.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FFFBC41DB0297200A65729 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		D1FFFBC71DB0297200A65729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				D16B8A521E077B44008333E5 /* Assets.xcassets */,
 				D16B8A541E077B44008333E5 /* Info.plist */,
 				D16B8A4A1E077B44008333E5 /* Supporting Files */,
+				D1F439131E16A0DE00A53C86 /* WatchRecentTableView.swift */,
 			);
 			path = "Scenari Apple Watch Extension";
 			sourceTree = "<group>";
@@ -1113,6 +1116,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F439141E16A0DE00A53C86 /* WatchRecentTableView.swift in Sources */,
 				D16B8A511E077B44008333E5 /* NotificationController.swift in Sources */,
 				D16B8A4F1E077B44008333E5 /* ExtensionDelegate.swift in Sources */,
 				D16B8A4D1E077B44008333E5 /* InterfaceController.swift in Sources */,

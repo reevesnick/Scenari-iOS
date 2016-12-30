@@ -1,6 +1,0 @@
-framework module SDCSegmentedViewController {
-  umbrella header "SDCSegmentedViewController-umbrella.h"
-
-  export *
-  module * { export * }
-}

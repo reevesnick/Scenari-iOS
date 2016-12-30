@@ -35,6 +35,7 @@ end
 
 target 'Scenari Apple Watch Extension' do
     pod 'Parse'
+  #  pod 'Fabric'
 
 end
 

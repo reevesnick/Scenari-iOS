@@ -1,6 +1,0 @@
-framework module Pods_Scenari_Apple_Watch_Extension {
-  umbrella header "Pods-Scenari Apple Watch Extension-umbrella.h"
-
-  export *
-  module * { export * }
-}
