@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts-Tasks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,7 +49,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Parse.xcscheme</key>
+		<key>Parse-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -55,6 +65,11 @@
 			<false/>
 		</dict>
 		<key>ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Scenari Apple Watch Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,12 +97,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FEEC8FCA36FE3D2BDCB73D009B9A046</key>
+		<key>06DDE43D502F292D6EEC29A7294D4628</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>10F9A5A2C136A6E890EC2CC733D3EB2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2A10C69455EB67307D91A66599D32083</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39FF4EAE621D03A3565717459907EFBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,11 +137,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51CB0AF616C6306147B99C320EB6D3ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
 		<dict>
 			<key>primary</key>
@@ -132,12 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>992FCB214BBCC8869FE1004A358BC3CE</key>
+		<key>90EE1C95C51D4FB65C65B73E59631AC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A760316124FD796EF09C09479E9F0021</key>
+		<key>B9A289164351F6300B87C6189394B032</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,12 +167,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9EC26A9FCE5AA4080E05735626BF003</key>
+		<key>CA191F18B23DF25D56B2A6E88BF3DE85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD9631BBE8C06C93CECECC0436FBBF81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D386C75EFD4F03725E4EFB866B600B9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFBEDED5A58DC863D2768E1ADDE05DD7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

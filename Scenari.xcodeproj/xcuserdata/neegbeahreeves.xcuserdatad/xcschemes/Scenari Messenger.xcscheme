@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0820"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D1FFFBAA1DB0271900A65729"
+               BlueprintIdentifier = "D1FFFBC01DB0297200A65729"
                BuildableName = "Scenari Messenger.appex"
                BlueprintName = "Scenari Messenger"
                ReferencedContainer = "container:Scenari.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D1FFFBAA1DB0271900A65729"
+            BlueprintIdentifier = "D1FFFBC01DB0297200A65729"
             BuildableName = "Scenari Messenger.appex"
             BlueprintName = "Scenari Messenger"
             ReferencedContainer = "container:Scenari.xcodeproj">

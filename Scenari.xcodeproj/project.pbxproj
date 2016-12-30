@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57F7F4BBF1EBA5F1EF94B040 /* Pods_Scenari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */; };
 		93E48082498D752CEC7165ED /* Pods_ScenariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */; };
+		C6F92CF54262907FE2BD8E2A /* Pods_Scenari_Apple_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2313E6D5D3D2376885057E47 /* Pods_Scenari_Apple_Watch_Extension.framework */; };
 		D11B0ED51CFE60C600F42943 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0ED41CFE60C600F42943 /* ProfileCell.swift */; };
 		D11B0EE31D00F86200F42943 /* RecentScenarioPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE01D00F86200F42943 /* RecentScenarioPostCell.swift */; };
 		D11B0EE41D00F86200F42943 /* RecentScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B0EE11D00F86200F42943 /* RecentScenarioPostDetailViewController.swift */; };
@@ -34,6 +35,7 @@
 		D18336481D025EFF005CDCF7 /* Scenari_Login_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */; };
 		D183364A1D0271FD005CDCF7 /* CreateScenario.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18336491D0271FD005CDCF7 /* CreateScenario.storyboard */; };
 		D183364C1D039160005CDCF7 /* akaDora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D183364B1D039160005CDCF7 /* akaDora.ttf */; };
+		D18CB3F41E15FE3300FB80B1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18CB3F31E15FE3300FB80B1 /* Storyboard.storyboard */; };
 		D195BA1C1CD3E9A300902FC6 /* ScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */; };
 		D195BA1E1CD3EA6500902FC6 /* CreateScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */; };
 		D195BA201CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */; };
@@ -149,9 +151,12 @@
 
 /* Begin PBXFileReference section */
 		0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scenari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2313E6D5D3D2376885057E47 /* Pods_Scenari_Apple_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scenari_Apple_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF5193532CAEBA8CDCCCBB /* Pods-Scenari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari/Pods-Scenari.release.xcconfig"; sourceTree = "<group>"; };
 		28EE3581EEBFFC74B5E814B3 /* Pods-Scenari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari/Pods-Scenari.debug.xcconfig"; sourceTree = "<group>"; };
 		6A24C0280D6EEBF0A5A8FBE9 /* Pods-ScenariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8730ECEE095B579EACB6F566 /* Pods-Scenari Apple Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari Apple Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari Apple Watch Extension/Pods-Scenari Apple Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		8F4C8102FF1AFC53D0D66FF9 /* Pods_Scenari_Apple_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scenari_Apple_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D11B0ED41CFE60C600F42943 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 		D18336471D025EFF005CDCF7 /* Scenari_Login_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scenari_Login_Logo.png; sourceTree = "<group>"; };
 		D18336491D0271FD005CDCF7 /* CreateScenario.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateScenario.storyboard; sourceTree = "<group>"; };
 		D183364B1D039160005CDCF7 /* akaDora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = akaDora.ttf; path = Scenari/akaDora.ttf; sourceTree = "<group>"; };
+		D18CB3F31E15FE3300FB80B1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		D195BA1B1CD3E9A300902FC6 /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 		D195BA1D1CD3EA6500902FC6 /* CreateScenarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScenarioViewController.swift; sourceTree = "<group>"; };
 		D195BA1F1CD3EA8800902FC6 /* ScenarioPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioPostDetailViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 		D1FFFBC71DB0297200A65729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D1FFFBC91DB0297200A65729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1FFFBCB1DB0297200A65729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8DB9B620B0BBC11232D99E1 /* Pods-Scenari Apple Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scenari Apple Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scenari Apple Watch Extension/Pods-Scenari Apple Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FFBA0DF19AA48BDDA8EEAE /* Pods-ScenariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDFC1188BCEC52EBB225668A /* Pods-ScenariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenariTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6F92CF54262907FE2BD8E2A /* Pods_Scenari_Apple_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +323,8 @@
 				0E0C21A9B3F48F6A509A8047 /* Pods_Scenari.framework */,
 				9EFA020A73C816F40E640FF8 /* Pods_ScenariTests.framework */,
 				ED7D1529F0FF90F7320A5C9B /* Pods_ScenariUITests.framework */,
+				8F4C8102FF1AFC53D0D66FF9 /* Pods_Scenari_Apple_Watch.framework */,
+				2313E6D5D3D2376885057E47 /* Pods_Scenari_Apple_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -328,6 +338,8 @@
 				F3FFBA0DF19AA48BDDA8EEAE /* Pods-ScenariTests.release.xcconfig */,
 				6A24C0280D6EEBF0A5A8FBE9 /* Pods-ScenariUITests.debug.xcconfig */,
 				B2F67D4E8EC635D4310C35B9 /* Pods-ScenariUITests.release.xcconfig */,
+				D8DB9B620B0BBC11232D99E1 /* Pods-Scenari Apple Watch Extension.debug.xcconfig */,
+				8730ECEE095B579EACB6F566 /* Pods-Scenari Apple Watch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -357,6 +369,7 @@
 				D16B8A3B1E077B44008333E5 /* Interface.storyboard */,
 				D16B8A3E1E077B44008333E5 /* Assets.xcassets */,
 				D16B8A401E077B44008333E5 /* Info.plist */,
+				D18CB3F31E15FE3300FB80B1 /* Storyboard.storyboard */,
 			);
 			path = "Scenari Apple Watch";
 			sourceTree = "<group>";
@@ -541,9 +554,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D16B8A5C1E077B44008333E5 /* Build configuration list for PBXNativeTarget "Scenari Apple Watch Extension" */;
 			buildPhases = (
+				7A62FD20C32A6E233D1F3687 /* [CP] Check Pods Manifest.lock */,
 				D16B8A411E077B44008333E5 /* Sources */,
 				D16B8A421E077B44008333E5 /* Frameworks */,
 				D16B8A431E077B44008333E5 /* Resources */,
+				EBC26415E84D54F55A2C6206 /* [CP] Embed Pods Frameworks */,
+				F45D19B8A9CC157E842A6B53 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -653,11 +669,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Brown Box Works";
 				TargetAttributes = {
 					D16B8A381E077B44008333E5 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = L6WD86F9N5;
 						ProvisioningStyle = Automatic;
 					};
 					D16B8A441E077B44008333E5 = {
@@ -720,6 +737,7 @@
 			files = (
 				D16B8A3F1E077B44008333E5 /* Assets.xcassets in Resources */,
 				D16B8A3D1E077B44008333E5 /* Interface.storyboard in Resources */,
+				D18CB3F41E15FE3300FB80B1 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,6 +913,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariTests/Pods-ScenariTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7A62FD20C32A6E233D1F3687 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		7B235B035E0283788121B3B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1013,6 +1046,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scenari/Pods-Scenari-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EBC26415E84D54F55A2C6206 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scenari Apple Watch Extension/Pods-Scenari Apple Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F052D99CB1AFC9F9F5442B18 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1026,6 +1074,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScenariUITests/Pods-ScenariUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F45D19B8A9CC157E842A6B53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scenari Apple Watch Extension/Pods-Scenari Apple Watch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4EABC4E8ED88F89D4F62193 /* 📦 Copy Pods Resources */ = {
@@ -1176,8 +1239,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Everette Scolum (M67W4TFXJ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Neegbeah Reeves (SEQHNGQLMA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Neegbeah Reeves (SEQHNGQLMA)";
+				DEVELOPMENT_TEAM = L6WD86F9N5;
 				IBSC_MODULE = Scenari_Apple_Watch_Extension;
 				INFOPLIST_FILE = "Scenari Apple Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari.watchkitapp;
@@ -1198,8 +1262,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Everette Scolum (L6WD86F9N5)";
+				DEVELOPMENT_TEAM = L6WD86F9N5;
 				IBSC_MODULE = Scenari_Apple_Watch_Extension;
 				INFOPLIST_FILE = "Scenari Apple Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbbw.Scenari.watchkitapp;
@@ -1214,6 +1278,7 @@
 		};
 		D16B8A5A1E077B44008333E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DB9B620B0BBC11232D99E1 /* Pods-Scenari Apple Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1233,6 +1298,7 @@
 		};
 		D16B8A5B1E077B44008333E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8730ECEE095B579EACB6F566 /* Pods-Scenari Apple Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1382,6 +1448,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Scenari-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1429,6 +1496,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Scenari-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1541,6 +1609,7 @@
 				D16B8A5B1E077B44008333E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D16B8A5E1E077B44008333E5 /* Build configuration list for PBXNativeTarget "Scenari Apple Watch" */ = {
 			isa = XCConfigurationList;
@@ -1549,6 +1618,7 @@
 				D16B8A591E077B44008333E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1CECAF81CD3E37E0006809A /* Build configuration list for PBXProject "Scenari" */ = {
 			isa = XCConfigurationList;

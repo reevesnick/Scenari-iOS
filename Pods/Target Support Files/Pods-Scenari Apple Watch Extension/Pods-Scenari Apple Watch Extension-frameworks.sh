@@ -84,28 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Bolts/Bolts.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ChameleonFramework/ChameleonFramework.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Facebook-iOS-SDK/FacebookSDK.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Fusuma/Fusuma.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/LaunchKit/LaunchKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Parse-iOS/Parse.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ParseFacebookUtils/ParseFacebookUtils.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDCSegmentedViewController/SDCSegmentedViewController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Bolts-Tasks/Bolts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Parse-watchOS/Parse.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Bolts/Bolts.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ChameleonFramework/ChameleonFramework.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Facebook-iOS-SDK/FacebookSDK.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Fusuma/Fusuma.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/LaunchKit/LaunchKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Parse-iOS/Parse.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ParseFacebookUtils/ParseFacebookUtils.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDCSegmentedViewController/SDCSegmentedViewController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Bolts-Tasks/Bolts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Parse-watchOS/Parse.framework"
 fi

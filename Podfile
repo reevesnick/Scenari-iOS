@@ -5,7 +5,7 @@
 use_frameworks!
 
 target 'Scenari' do
-    
+
 pod 'Parse'
 pod 'ParseUI'
 pod 'ParseFacebookUtils'
@@ -33,6 +33,11 @@ end
 
 end
 
+target 'Scenari Apple Watch Extension' do
+    pod 'Parse'
+
+end
+
 
 target 'ScenariTests' do
 
@@ -41,4 +46,3 @@ end
 target 'ScenariUITests' do
 
 end
-
